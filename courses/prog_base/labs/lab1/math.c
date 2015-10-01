@@ -1,19 +1,5 @@
+#import <math.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-double calc(double, double, double);
-
-int main() {
-    double xval = 0, yval = 0, zval = 0;
-    double result;
-
-    result = calc(xval, yval, zval);
-
-    printf("%.12f", result);
-    return 0;
-}
 
 double calc(double x, double y, double z) {
    double a;
