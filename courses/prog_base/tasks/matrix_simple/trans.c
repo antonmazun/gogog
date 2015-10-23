@@ -3,13 +3,14 @@
 #include <time.h> 
 
 /*void fillRand(int mat [4][4]); 
-void flipV(int mat [4][4]) ; 
+void flipV(int mat [4][4]) ;
 void rotateCW270(int mat [4][4]) ; 
 void transposMain( int mat[4][4]); 
 
 int main () 
 { 
 int a,b; 
+srand(time(NULL)); 
 int mat [4][4]; 
 fillRand(mat); 
 for (a=0;a<4;a++) 
@@ -65,7 +66,7 @@ return(0);
 void fillRand(int mat [4][4]) 
 { 
 int a,b; 
-srand(time(NULL)); 
+
 for (a = 0; a < 4; a++) 
 { 
 for (b = 0; b < 4; b++) 
