@@ -9,7 +9,7 @@ int main(void)
     pos.Y = 0; 
 	int i, j;
 	int num = 0;
-	int fl = 1;
+	int f = 1;
     pos.X = 0;
 	pos.Y = 0;
 	int k =  FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED;
@@ -41,8 +41,8 @@ int main(void)
 			printf(" ");
 			Sleep(SLEEP_MILLISECONDS); 
 		}
-		fl = i;
-		for (i = fl; i > fl + num ; i--)
+		f = i;
+		for (i = f; i > f + num ; i--)
 		{
 			switch (i % 3){
 				case 0: k = BACKGROUND_RED; break;
@@ -72,8 +72,8 @@ int main(void)
 		}
 		num = -num;
 		num++;
-		fl = i;
-		for (i = fl; i < fl + num ; i++)
+		f = i;
+		for (i = f; i < f + num ; i++)
 		{
 			switch (i % 3){
 				case 0: k = BACKGROUND_RED; break;
