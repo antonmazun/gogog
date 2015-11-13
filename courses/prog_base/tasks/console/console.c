@@ -3,7 +3,7 @@
 int main(void)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    const long SLEEP_MILLISECONDS = 5; 
+    const long SLEEP_MILLISECONDS = 10; 
 	COORD pos;  
     pos.X = 0; 
     pos.Y = 0; 
@@ -20,7 +20,7 @@ int main(void)
 			pos.X = j; 
 			pos.Y = i;
 			SetConsoleCursorPosition(hConsole, pos);
-			putchar(' ');
+		printf(" ");
 		}
 	i = 12;
 	j = 12;
