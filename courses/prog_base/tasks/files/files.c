@@ -1,18 +1,23 @@
 void fprocess(const char * pread, const char * pwrite)
 {
-	FILE * fr = NULL;
-	FILE * fw = NULL;
-	fr = fopen(pread, "r");
-	fw = fopen(pwrite, "w");
-	char ch;
-	if (fr == NULL || fw == NULL)
+	FILE * a = NULL;
+	FILE * b = NULL;
+	a = fopen(pread, "r");
+	b = fopen(pwrite, "w");
+	if (NULL == a)
 		return;
-	int a = 0, a1 = 0;
-	for(a = 0; a < 11; a++)
-		while (fgetc(fr) != 10)
+	if(NULL == b)
+	
+		return;
+		
+	int i = 0, a1 = 0 , c = 0;
+	for(i = 0; i < 11; i++)
+		while (fgetc(a) != 10)
 			;
-	fscanf(fr, "%i %i", &a, &a1);
-	fprintf(fw, "%i", a * a1);
-	fclose (fw);
-	fclose (fr);
+			c = i * j;
+	fscanf(a, "%i %i", &i &j);
+		c = i * j;
+	fprintf(b, "%i", c);
+	fclose (b);
+	fclose (a);
 }
