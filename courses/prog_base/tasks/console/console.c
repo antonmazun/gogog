@@ -5,15 +5,14 @@ int main(void)
 	int i, j;
 	int num = 0;
 	int f = 1;
+		int k =  FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED;
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     const long SLEEP_MILLISECONDS = 10; 
 	COORD pos;  
     pos.X = 0; 
     pos.Y = 0; 
-	
     pos.X = 0;
-	pos.Y = 0;
-	int k =  FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED;
+	pos.Y = 0
 	SetConsoleTextAttribute(hConsole, k);
 	for (i = 0; i < 24; i++)
 		for (j = 0; j < 80; j++)
