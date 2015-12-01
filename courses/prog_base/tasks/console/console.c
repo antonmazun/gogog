@@ -12,7 +12,7 @@ int main(void)
     pos.X = 0; 
     pos.Y = 0; 
     pos.X = 0;
-	pos.Y = 0
+    pos.Y = 0;
 	SetConsoleTextAttribute(hConsole, k);
 	for (i = 0; i < 24; i++)
 		for (j = 0; j < 80; j++)
