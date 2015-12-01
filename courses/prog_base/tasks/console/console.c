@@ -2,14 +2,15 @@
 #include <windows.h>
 int main(void)
 {
+	int i, j;
+	int num = 0;
+	int f = 1;
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     const long SLEEP_MILLISECONDS = 10; 
 	COORD pos;  
     pos.X = 0; 
     pos.Y = 0; 
-	int i, j;
-	int num = 0;
-	int f = 1;
+	
     pos.X = 0;
 	pos.Y = 0;
 	int k =  FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED;
