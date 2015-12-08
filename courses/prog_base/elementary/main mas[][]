@@ -156,9 +156,9 @@ void sumryadkiv(int N,  int M , int mas[N][M]){
 	puts("\n");
 	int sum5 = 0;
 	printf("suma stolbikov:\n");
-	for (j = 0; j < N; j++){
+	for (j = 0; j < M; j++){
 		sum5 = 0;
-		for (i = 0 ; i < M; i++)
+		for (i = 0 ; i < N; i++)
 		sum5 += mas[i][j];
 		printf("%i\t" , sum5);
 	}
