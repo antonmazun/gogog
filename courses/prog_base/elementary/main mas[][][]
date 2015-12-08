@@ -1,0 +1,142 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+int sum(int N , int M, int L, int mas[N][M][L]);
+int sumdig( int N , int mas[N][N][N]);
+int maxvalue( int N , int M, int L, int mas[N][M][L]);
+void zamina(int N , int M, int L, int mas[N][M][L]);
+
+int main(void) {
+	
+	int i , j , k , N , M,max;
+	static int L;
+	srand(time(NULL));
+	printf ("please enter size of masiv:\n");
+		scanf (" %i %i %i" , &N, &M, &L);
+		puts("\n");
+		int mas[N][M][L];
+		for(k = 0; k < N; k++){
+		
+		for( j = 0 ;  j< M; j++){
+		
+		for( i = 0 ; i < L; i++){
+		
+		mas[k][j][i] = rand()%10;
+		
+		printf("%i " , mas[k][j][i]);
+		
+		}
+	printf("\n");
+		
+}
+	printf("\n\n\n");
+
+}
+int a = sum( N , M, L, mas);
+printf("suma:%i" , a);
+puts("\n");
+int b = sumdig( N , mas);
+		printf("suma diagonali:%i" , b);
+		puts ("\n");
+		printf("maxValue:\n");
+int c = maxvalue( N ,  M, L, mas);
+printf("%i" ,c);
+puts("\n");
+puts("vot zaminenui masiv:");
+zamina(N,M,L,mas);
+	for(k = 0; k < N; k++){
+	
+		
+		for( j = 0 ;  j< M; j++){
+		
+		
+		for( i = 0 ; i < L; i++){
+		
+printf("%i " ,mas[k][j][i]);
+}
+printf ("\n");
+}
+printf("\n\n\n");
+
+}
+	return 0;
+}
+
+
+int sum(int N , int M, int L, int mas[N][M][L]){
+	
+	int i , j , k,sum;
+	sum  = 0;
+	for(k = 0; k < N; k++)
+		
+		for( j = 0 ;  j< M; j++)
+		
+			for( i = 0 ; i < L; i++)
+			sum +=mas[i][j][k];
+			
+			return sum;
+}
+
+
+int sumdig( int N , int mas[N][N][N]){
+	
+	int sum1 = 0;
+	int i;
+	for ( i = 0 ; i < N; i++)
+	
+	sum1 +=mas[i][i][i];
+	
+	return sum1;
+}
+
+
+int maxvalue( int N , int M, int L, int mas[N][M][L]){
+	
+	int i , j ,k ,max;
+	max = mas[0][0][0];
+		for(k = 0; k < N; k++)
+		for( j = 0 ;  j< M; j++)
+		for( i = 0 ; i < L; i++)
+		
+		if( max < mas[k][j][i]){
+			max = mas[k][j][i];
+		}
+	
+	return max;
+}
+
+void zamina(int N , int M, int L, int mas[N][M][L]){
+	
+	int i , j ,k , min , max ,d ;
+	int arr[6];
+	min = mas[0][0][0];
+	max = mas[0][0][0];
+	for(k = 0; k < N; k++)
+		for( j = 0 ; j < M; j++)
+		for( i = 0 ; i < L; i++){
+		if(min >= mas[k][j][i]){
+			arr[0] = k;
+			arr[1] = j;
+			arr[2] = i;
+			min = mas[k][j][i];
+		}
+		if(max <= mas[k][j][i]){
+			arr[3] = k;
+			arr[4] = j;
+			arr[5] = i;
+			max = mas[k][j][i];
+			
+		}
+		
+		}
+
+d = min;
+mas[arr[0]][arr[1]][arr[2]] = max;
+mas[arr[3]][arr[4]][arr[5]] = d;
+}
+
+
+
