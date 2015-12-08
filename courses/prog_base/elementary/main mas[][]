@@ -1,0 +1,167 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int sum ( int *mas , int N, int M);
+int sumdig ( int *mas , int N);
+int pobdig ( int *mas , int N);
+int maxArray( int *mas , int N, int M);
+int minArray ( int *mas , int N, int M);
+void minIndex (int N , int M, int mas[N][M]);
+void sumryadkiv(int N,  int M , int mas[N][M]);
+
+int main(void) {
+	int i, j  , N;
+	static int M;
+	srand(time(NULL));
+	printf ("please enter size of matrix:\n");
+	scanf (" %i %i" , &N, &M);
+	int mas[N][M];
+	for( i = 0 ; i < N ; i++){
+		for ( j = 0; j < M; j++)
+		{
+		
+			mas[i][j]= rand()%9;
+				printf ("%i " , mas[i][j]);
+				}
+					printf ("\n");
+			}
+				printf ("\n");
+	
+		printf ("suma :%i" , sum(mas,N,M));
+			printf ("\n");
+		printf ("suma diagonali : %i\n" , sumdig( mas , N));
+	
+		printf ("suma pobichnoi diagonali : %i\n" , pobdig (mas ,N));
+		maxArray(mas ,N, M);
+		printf ( "maxArray = %i\n" , maxArray(mas , N, M));
+		printf("\n");
+		minArray (mas ,N,M);
+				printf("\n");
+		printf ( " minArray = %i\n" , minArray (mas , N,M));
+		printf ("suma pid golovnoi dig: %i\n " ,sum3 (mas , N ));
+	 minIndex (N ,  M, mas);
+	sumryadkiv(N,M ,mas);
+	return 0;
+}
+
+int sum ( int *mas , int N, int M){
+	int i , j , sum =0;
+	for ( i = 0; i < N; i++)
+		for( j = 0; j < M; j++)
+		
+		sum+=*(mas+i*M+j);
+
+	return sum;
+}
+
+int sumdig ( int *mas , int N){
+	
+	int i, sum1 = 0;;
+	for ( i = 0; i < N; i++){
+		sum1 += *(mas + i*N +i);
+	}
+	
+	return sum1;
+}
+
+
+int pobdig ( int *mas , int N){
+	
+	int i , sum2 = 0;
+	for( i = 0 ; i < N; i++){
+		sum2 += *(mas + i*(N) +(N-i-1));
+	}
+	return sum2;
+}
+
+
+
+int maxArray( int *mas , int N, int M){
+	
+	int i, j, max;
+	max = *mas;
+	for ( i = 0 ; i < N; i++)
+		for ( j = 0; j < M; j++)
+			if( max < *(mas + i*M + j)){
+			
+			
+			max =*(mas + i*N + j);
+		
+	}
+	return max;
+}
+
+
+ int minArray ( int *mas , int N, int M){
+ 	
+ 	int i , j ,min;
+ 	min = *mas;
+ 	
+ 	for ( i = 0 ; i < N; i++)
+	 
+ 		for( j = 0 ;  j < M; j++)
+ 			if ( min > *(mas + i*M + j)){
+ 				
+ 			min =  *(mas + i*M + j);
+ 			
+			 }
+	return min;
+}
+
+
+void minIndex (int N , int M, int mas[N][M]){
+	
+	int i , j , x = 0, y = 0 , min =0;
+	min = mas[0][0];
+	for( i = 0 ; i < N; i++)
+	for( j = 0; j < M; j++)
+	if (min > mas[i][j]){
+		min = mas[i][j];
+		x = i;
+		y = j;
+	}
+	
+	printf ("indekcu minimalnogo elementa:\n");
+	printf("ryadok : %i\n" , ++x);
+	printf("stolbik: %i\n" , ++y);
+}
+
+
+
+int sum3 ( int *mas , int N ){
+	int i , j , sum3 = 0;
+	for ( i = 1 ; i < N; i++){
+		for ( j = N -1 ; j >= N-1 ; j--)
+			
+			
+		
+		sum3 += *(mas + i*(N) +(N-i-1));
+	}
+	
+	return sum3;
+}
+
+
+void sumryadkiv(int N,  int M , int mas[N][M]){
+	
+	int i , j , sum4 = 0;
+	printf("suma ryadkiv:\n");
+	for ( i = 0; i < N; i++){
+	sum4 = 0;
+		for ( j = 0 ; j < M; j++)
+		sum4 += mas[i][j];
+		printf( "%i\t" , sum4);
+	}
+	puts("\n");
+	int sum5 = 0;
+	printf("suma stolbikov:\n");
+	for (j = 0; j < N; j++){
+		sum5 = 0;
+		for (i = 0 ; i < M; i++)
+		sum5 += mas[i][j];
+		printf("%i\t" , sum5);
+	}
+}
+	
+
