@@ -1,0 +1,196 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+
+void po (int *b);
+void Fillrand(int mas[] , int size);
+void vuvid();
+int vuvidmasiva(int size,int mas[]);
+void vuvidmasiva1(int size , int mas[]);
+void vuvidnegativ(int size , int mas[]);
+void Fillrand1(float mas1[] , int size);
+void dvavkazivnuka (int size , float mas1[]);
+void masivsumvoliiv(int size ,  char a[]);
+void pustuielement(int sz , char a[sz] );
+void kotik( void);
+
+
+int main(int argc, char *argv[]) 
+{
+	int a =0, *c ,q = 0, *b,i ,size = 10 ,mas[size];
+	int *pa;
+	float mas1[size];
+	srand(time(NULL));
+ 	char h[] = "h ello, world";
+	printf ( "vvedit chislo\n");
+	scanf ("%i" , &a);
+	pa= &a;
+	printf (" 1 zav :%d\n" , *pa);
+	po(&a);
+		printf (" 2 zav : %d\n" , a);
+		   	c = &q;
+			*c = 85;
+		printf ( "c = %d\n", *c);
+		Fillrand( mas ,size);
+		for( i = 0 ; i < size; i++)
+		printf ("%i\t" , mas[i]);
+		puts("\n");
+		//vuvid();
+		puts("pryamui vuvid:\n");
+	vuvidmasiva( size,mas);
+	puts("\n");
+//	puts("sadfgh");
+	puts("zvorortniu vuvid:\n");
+	vuvidmasiva1(size , mas);
+//	puts ("fghfjg");
+	puts("\n");
+	puts("vuvid negativnux chisel:\n");
+	vuvidnegativ(size,mas);
+	puts("\n");
+	puts("drobovui masiv:\n");
+	Fillrand1(mas1 ,size);
+puts("\n");
+puts("dillennya elementiv:\n");
+dvavkazivnuka (size ,mas1);
+puts ("\n");
+puts("\n");
+masivsumvoliiv(sizeof(h)/sizeof(char) , &h);
+puts("\n");
+puts ("pustui simvol");
+pustuielement(sizeof(h)/sizeof(char) , &h);
+puts("\n");
+puts ("vuvid cherez 2 vkazivnuka:");
+kotik( );
+	
+	return 0;
+	
+}
+
+
+void po( int * b)
+{
+	*b = 98;
+}
+
+void Fillrand( int mas[] , int size)
+{
+	int i;	
+	for ( i = 0 ; i < size; i++ ){
+		mas[i] = rand()%19999-10000; 
+	}
+}
+/*
+void vuvid ( ){
+	int *x, *y;
+	int a = 85654;
+	*x = &a;
+	x = 0;
+	*y = &x;
+	x = 1;
+	printf(" vot %i" , *x );
+	 
+	
+	
+}
+*/
+
+int vuvidmasiva(int size, int mas[]){
+	
+	int * v;
+	int i;
+		v = mas;
+	for(i = 0; i < size ; i++)
+		printf("%i\t" , v[i]);
+
+	return 0;
+}
+
+void vuvidmasiva1(int size , int mas[] ){
+	int * j;
+	
+	for( j =  mas + size-1; j !=mas-1; j--)
+	
+	printf("%i\t" , *j);
+}
+
+
+
+void vuvidnegativ(int size , int mas[]){
+	
+	int i;
+	int * w;
+	w = mas;
+	for( i = 0; i < size; i++)
+	if( w[i] < 0)
+	printf ("%i\t"  ,w[i]);
+}
+
+
+void Fillrand1(float mas1[] , int size){
+	
+	int i;
+	
+	for ( i = 0 ; i < size; i++){
+		
+		mas1[i] = (float)rand()/(float)RAND_MAX*5;
+		 printf("%0.2f\t" ,mas1[i]);
+	}
+	
+}
+
+void dvavkazivnuka (int size , float mas1[]){
+	int i  ,j ;
+float * n;
+float * m;
+	n = mas1;
+	m = mas1 + size - 1;
+	while(1){
+			printf (" %0.2f\t" , *n / *m);
+		n++;
+		if(m == n)
+		break;
+			m--;
+			if( m == n)
+			break;
+		}	
+}
+
+void masivsumvoliiv(int sz ,  char a[sz]){
+	
+	char * r;
+	 r = a;
+	 while(r <= a + sz)
+{
+	printf( "%c" , *(r++));
+	}	
+}
+
+
+void pustuielement(int sz , char a[sz] ){
+	char * r;
+	 r = a;
+	 while(r < a + sz)
+	{
+		if(	*r == ' ')	
+			*r = '\0';
+				r++;
+	}
+	puts(a);
+}
+
+void kotik( void){
+	
+	int g = 9;
+	int *o;
+	int *l;
+	o = &g;
+	l = o;
+	printf("%i" , *l);
+}
+
+	
+	
+	
+	
