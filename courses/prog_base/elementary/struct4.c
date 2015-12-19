@@ -36,10 +36,10 @@ int main(void){
 	scanf("%i" ,&xy[i].y4);
 
  
-	xy[i].len1 = sqrt((xy[i].x2 - xy[i].x1)^2 + (xy[i].y2 -xy[i].y1 )^2);
-		xy[i].len2 = sqrt((xy[i].x3 - xy[i].x2)^2 + (xy[i].y3 -xy[i].y2 )^2);
-			xy[i].len3 = sqrt((xy[i].x4 - xy[i].x3)^2 + (xy[i].y4 -xy[i].y3 )^2);
-				xy[i].len4 = sqrt((xy[i].x1 - xy[i].x4)^2 + (xy[i].y1 -xy[i].y4 )^2);
+	xy[i].len1 = sqrt(pow((xy[i].x2 - xy[i].x1),2) + pow((xy[i].y2 -xy[i].y1 ),2));
+		xy[i].len2 = sqrt(pow((xy[i].x3 - xy[i].x2),2) + pow((xy[i].y3 -xy[i].y2 ),2));
+			xy[i].len3 = sqrt(pow((xy[i].x4 - xy[i].x3),2) + pow((xy[i].y4 -xy[i].y3 ),2));
+				xy[i].len4 = sqrt(pow((xy[i].x1 - xy[i].x4,2) + pow((xy[i].y1 -xy[i].y4 ),2));
 			
 				f = ((xy[i].x1-xy[i].x2)*(xy[i].x3-xy[i].x2) + (xy[i].y1-xy[i].y2)*(xy[i].y3-xy[i].y2));
 	pl = xy[i].len1 * xy[i].len2;
