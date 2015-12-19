@@ -55,10 +55,10 @@ int main(void){
 		
 				if(xy.len1 == xy.len3 && xy.len2 == xy.len4 && f == 0){
 					
-				printf("length12:%f\n" ,xy.len1);
-				printf("length23:%f\n" ,xy.len2);
-				printf("length34:%f\n" ,xy.len3);
-				printf("length41:%f\n" ,xy.len4);
+				printf("len1:%f\n" ,xy.len1);
+				printf("len2:%f\n" ,xy.len2);
+				printf("len3:%f\n" ,xy.len3);
+				printf("len4:%f\n" ,xy.len4);
 				}
 				else 
 					puts  ("It is not rectangle");
