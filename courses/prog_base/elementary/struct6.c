@@ -33,7 +33,7 @@ int main(void) {
 	fflush(stdin);
 	scanf("%i" , &p.high);
 	
-	printf("name: %s surname: %s age: %i weight: %i high: %i" , pp->name, pp->surname, pp->age, pp->weight, pp->high);
+	printf("name: %s; surname: %s; age: %i; weight: %i; high: %i;" , pp->name, pp->surname, pp->age, pp->weight, pp->high);
 	return 0;
 
 }
