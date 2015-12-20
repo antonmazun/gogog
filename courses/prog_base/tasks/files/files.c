@@ -15,7 +15,7 @@ void fprocess(const char * pread, const char * pwrite)
 		while (fgetc(a) != 10)
 			;
 			c = i * j;
-	fscanf(a, "%i %i", &i &j);
+	fscanf(a, "%i %i", &i,&j);
 		c = i * j;
 	fprintf(b, "%i", c);
 	fclose (b);
