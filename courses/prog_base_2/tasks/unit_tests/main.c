@@ -86,8 +86,8 @@ assert_int_equal(arr_count(arr), 2);
 int main(void) {
     const struct CMUnitTest tests[] =
     {
-        cmocka_unit_test(new_void_add),cmocka_unit_test(new_void_glue),cmocka_unit_test(new_void_create_remove),
-        cmocka_unit_test(new_void_plus),cmocka_unit_test(new_void_count),
+        cmocka_unit_test(new_void_add_elem),cmocka_unit_test(new_void_glue_arr),cmocka_unit_test(new_void_arrcreate_arrremove),
+        cmocka_unit_test(new_void_plus_arr),cmocka_unit_test(new_void_count),
     };
     return cmocka_run_group_tests(tests, NULL, NULL);
 }
