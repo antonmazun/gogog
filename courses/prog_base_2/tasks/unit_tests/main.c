@@ -7,7 +7,7 @@
 #include "D:\arraydz.h"
 
 
-static void new_void_create_remove(void **state)
+static void new_void_arrcreate_arrremove(void **state)
 {
    arr_t * arr = arr_new(5);
     assert_int_equal(arr_length(arr), 5);
@@ -15,7 +15,7 @@ static void new_void_create_remove(void **state)
     assert_null(arr);
 }
 
-static void new_void_add(void **state)
+static void new_void_add_elem(void **state)
 {
 arr_t * arr = arr_new(5);
 assert_int_equal(arr_add(arr, 1, 189), ARR_OK);
@@ -27,7 +27,7 @@ assert_int_equal(arr_get(arr, 37, &elem), ARR_OVERFLOW);
 arr_remove(&arr);
 }
 
-static void new_void_plus( void **state ){
+static void new_void_plus_arr( void **state ){
 
 arr_t * arr = arr_new(10);
 arr_t * arr1 = arr_new(10);
@@ -50,7 +50,7 @@ arr_remove(&arr2);
 
 
 
-static void new_void_glue( void**state){
+static void new_void_glue_arr( void**state){
  int el1;
  int el2;
 arr_t * arr = arr_new(15);
