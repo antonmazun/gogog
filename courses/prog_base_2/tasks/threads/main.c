@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+
+
 #include "Randomizer.h"
 #include "ZeroWriter.h"
 
-HANDLE hMutex; //Указатель типа *void
+ //Указатель типа *void
 
 
 int main(void) {
@@ -16,34 +21,14 @@ NULL, // default security attributes
 FALSE, // initially not owned
 NULL);
 // create new threads
-HANDLE consumers[] = {
-newThread(ZeroWriter, &value),
-newThread(ZeroWriter, &value),
+HANDLE * raz = randomizer_new(&value);
+HANDLE * dwa = zeroWriter_new(&value);
 
-};
-HANDLE producers[] = {
+while (!kbhit());
+CloseHandle(hMutex);
+randomizer_del(raz);
+zeroWriter_del(dwa);
 
-    newThread(Randomizer, &value),
-    newThread(Randomizer, &value),
-    newThread(Randomizer, &value),
-    newThread(Randomizer, &value),
-    newThread(Randomizer, &value),
-
-};
-
-int i;
-
-while (!kbhit()) {
-
-Sleep(10);
-}
-    for (i = 0; i < 5; i++) {
-    CloseHandle(producers[i]);
-}
-    for ( i = 0; i < 2; i++) {
-        CloseHandle(consumers[i]);
-}
-    CloseHandle(hMutex);
     getch();
     system("cls");
 
