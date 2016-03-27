@@ -40,7 +40,7 @@ Sleep(10);
     for (i = 0; i < 5; i++) {
     CloseHandle(producers[i]);
 }
-    for ( i = 0; i < 5; i++) {
+    for ( i = 0; i < 2; i++) {
         CloseHandle(consumers[i]);
 }
     CloseHandle(hMutex);
