@@ -7,7 +7,7 @@
 #include "corpus.h"
 #include <time.h>
 
-static void new_void_CorpusOk(void ** state){
+static void corpus_new__roomsAndSeats__self(void ** state){
 
 corpus_t * self = NULL;
 int number = 4;
@@ -17,7 +17,7 @@ self  = corpus_new(number , mas);
  corpus_free(self);
 }
 
-static void new_void_roomIsBusy( void ** state){
+static void room_busy__self__0OR1( void ** state){
 
 corpus_t * corpus = NULL;
 int number =  2;
@@ -34,7 +34,7 @@ assert_int_equal(room_busy(self) , 0);
 corpus_free(corpus);
 }
 
-static void new_void_roomCount(void ** state){
+static void corpus_Room_count__self__roomCount(void ** state){
 
 int number =  2;
 int mas[2] = {1,2};
@@ -46,7 +46,7 @@ corpus_free(corpus);
 }
 
 
-static void new_void_emptySeats(void ** state){
+static void room_empty_seats__self__emptySeats(void ** state){
 
 int number =  2;
 int mas[2] = {1,2};
@@ -57,7 +57,7 @@ corpus_free(corpus);
 }
 
 
-static void new_void_NoEmptySeats(void ** state){
+static void room_empty_seats__self__NoemptySeats(void ** state){
 
 int number =  2;
 int mas[2] = {1,2};
@@ -68,7 +68,7 @@ corpus_free(corpus);
 }
 
 
-static void new_void_RoomOk(void ** state){
+static void room_new__seats__self(void ** state){
 
 int number =  2;
 int mas[2] = {1,2};
@@ -83,12 +83,12 @@ int main(void){
 
  const struct CMUnitTest tests[] = {
 
- cmocka_unit_test(new_void_CorpusOk),
- cmocka_unit_test(new_void_roomIsBusy),
- cmocka_unit_test(new_void_roomCount),
- cmocka_unit_test(new_void_emptySeats),
- cmocka_unit_test(new_void_NoEmptySeats),
- cmocka_unit_test( new_void_RoomOk),
+ cmocka_unit_test(corpus_new__roomsAndSeats__self),
+ cmocka_unit_test(room_busy__self__0OR1),
+ cmocka_unit_test(corpus_Room_count__self__roomCount),
+ cmocka_unit_test(room_empty_seats__self__emptySeats),
+ cmocka_unit_test(room_empty_seats__self__NoemptySeats),
+ cmocka_unit_test(room_new__seats__self),
 
  };
 
