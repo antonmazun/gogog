@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1460281065 source:d:\json\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cJSON.h"
+	<stdio.h>
+	"parse.h"
+	"struct.h"
+
+1458401080 d:\json\cjson.h
+
+1460286405 source:d:\json\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1460274644 d:\json\parse.h
+	<stdio.h>
+	"struct.h"
+
+1460286627 d:\json\struct.h
+	<stdio.h>
+
+1460286606 source:d:\json\struct.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"struct.h"
+	"parse.h"
+
+1460281428 source:d:\json\qw.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	<string.h>
+
