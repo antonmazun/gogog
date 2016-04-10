@@ -1,0 +1,33 @@
+[
+{
+	{
+		"name": "Karl",
+		"surname": "Oult",
+		"birthdate": "1989-01-17",
+		"company": {
+			"Network": "VK",
+			"Language": "Russian",
+			"Release": "2006"
+					
+	},
+		
+		"name": "Ivan",
+		"surname": "Ivanov",
+		"birthdate": "1992-09-18",
+		"company": {
+			"Network": "OK",
+			"Language": "Ukrainian",
+			"Release": "2006"
+					
+	
+		},
+		"name": "Taras",
+		"surname": "Tarasov",
+		"birthdate": "1975-01-12",
+		"company": {
+			"Network": "FB",
+			"Language": "English",
+			"Release": "2004"
+					}
+}
+]
