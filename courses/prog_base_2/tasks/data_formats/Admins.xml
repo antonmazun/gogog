@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admins>
+    <admin>
+        <name>Karl</name>
+        <surname>Oult</surname>
+        <birthdate>1989-01-17</birthdate>
+            <company>
+		<Network>VK</Network>
+		<Language>Russian</Language>
+		<Release>2006</Release>
+	    </company>
+    </admin>
+    <admin>
+         <name>Ivan<name/>
+         <surname>Ivanov</surname>
+        <birthdate>1992-09-18</birthdate>
+            <company>
+		<Network>OK</Network>
+		<Language>Ukrainian</Language>
+		<Release>2006</Release>
+	    </company>
+ 	</admin>
+</admins>
