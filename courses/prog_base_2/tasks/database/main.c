@@ -10,16 +10,16 @@ int main()
 
 
     const char * dbFile = "admins.db";
-    admin_t studentList[100];
+    admin_t adminList[100];
     db_t * db = db_new(dbFile);
 
     int countAdmins = db_countAdmins(db);
     printf("Admins total: %i\n\n", countAdmins);
     int filterFollowers = 9;
-    int filterYear = 9;
-    int size = db_getStudentsTask(db, filterYear, filterFollowers, studentList, 100);
-    printf("%i %i year: %i\n\n", filterFollowers, filterYear, size);
-    printList(studentList, size);
+    int filterYears = 9;
+    int size = db_getStudentsTask(db, filterYears, filterFollowers, adminList, 100);
+    printf("%i %i year: %i\n\n", filterFollowers, filterYears, size);
+    printList(adminList, size);
 
 
     return 0;

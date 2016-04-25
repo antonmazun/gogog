@@ -1,6 +1,7 @@
 #ifndef DATAB_H_INCLUDED
 #define DATAB_H_INCLUDED
 #include "admin.h"
+#include <string.h>
 #include <sqlite3.h>
 typedef struct db_s db_t;
 

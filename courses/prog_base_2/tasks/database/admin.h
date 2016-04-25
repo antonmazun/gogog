@@ -6,8 +6,8 @@ typedef struct admin_s{
 int number;
 char name[100];
 char surname[100];
-int hours;
-int data;
+int subscribes;
+int years;
 double Rank;
 } admin_t;
 

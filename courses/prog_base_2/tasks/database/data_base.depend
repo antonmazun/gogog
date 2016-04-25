@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1461535013 source:d:\data_base\datab.c
+1461574531 source:d:\data_base\datab.c
 	<stdio.h>
 	<stdlib.h>
 	"datab.h"
 	<sqlite3.h>
 
-1461534178 source:d:\data_base\main.c
+1461575254 source:d:\data_base\main.c
 	<stdio.h>
 	<stdlib.h>
 	<sqlite3.h>
@@ -15,7 +15,7 @@
 1459262844 d:\data_base\\sqlite3.h
 	<stdarg.h>
 
-1461531621 source:d:\data_base\admin.c
+1461572042 source:d:\data_base\admin.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -23,9 +23,10 @@
 	"datab.h"
 	"admin.h"
 
-1461533069 d:\data_base\datab.h
+1461571496 d:\data_base\datab.h
 	"admin.h"
+	<string.h>
 	<sqlite3.h>
 
-1461531621 d:\data_base\admin.h
+1461571094 d:\data_base\admin.h
 
