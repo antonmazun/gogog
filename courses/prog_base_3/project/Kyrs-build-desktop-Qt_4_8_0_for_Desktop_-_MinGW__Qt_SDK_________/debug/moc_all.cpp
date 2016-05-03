@@ -1,15 +1,15 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'dialog.h'
+** Meta object code from reading C++ file 'all.h'
 **
-** Created: Mon 2. May 13:23:08 2016
+** Created: Mon 2. May 17:16:44 2016
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../Kyrs/dialog.h"
+#include "../../Kyrs/all.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'dialog.h' doesn't include <QObject>."
+#error "The header file 'all.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_Dialog[] = {
+static const uint qt_meta_data_All[] = {
 
  // content:
        6,       // revision
@@ -31,55 +31,55 @@ static const uint qt_meta_data_Dialog[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-       8,    7,    7,    7, 0x08,
+       5,    4,    4,    4, 0x08,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_Dialog[] = {
-    "Dialog\0\0on_Search_but_clicked()\0"
+static const char qt_meta_stringdata_All[] = {
+    "All\0\0on_pushButton_clicked()\0"
 };
 
-void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void All::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        Dialog *_t = static_cast<Dialog *>(_o);
+        All *_t = static_cast<All *>(_o);
         switch (_id) {
-        case 0: _t->on_Search_but_clicked(); break;
+        case 0: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObjectExtraData Dialog::staticMetaObjectExtraData = {
+const QMetaObjectExtraData All::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject Dialog::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_Dialog,
-      qt_meta_data_Dialog, &staticMetaObjectExtraData }
+const QMetaObject All::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_All,
+      qt_meta_data_All, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &Dialog::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &All::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *Dialog::metaObject() const
+const QMetaObject *All::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *Dialog::qt_metacast(const char *_clname)
+void *All::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_Dialog))
-        return static_cast<void*>(const_cast< Dialog*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_All))
+        return static_cast<void*>(const_cast< All*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int Dialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int All::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

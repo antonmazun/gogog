@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 TARGET = Kyrs
 TEMPLATE = app
@@ -12,10 +12,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialog.cpp
+    search.cpp \
+    all.cpp
 
 HEADERS  += mainwindow.h \
-    dialog.h
+    search.h \
+    all.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    search.ui \
+    all.ui
