@@ -88,7 +88,7 @@ int db_insertAdmin(db_t * self, admin_t * admin) {
 admin_t * db_getAdminById(db_t * self, int number) {
     admin_t * admin = malloc(sizeof(struct admin_s));
     sqlite3_stmt * stmt = NULL;
-    const char * sqlQuery = "SELECT * FROM admins WHERE c == ?;";
+    const char * sqlQuery = "SELECT * FROM admins WHERE c = ?;";
     sqlite3_prepare_v2(self->db, sqlQuery, strlen(sqlQuery), &stmt, 0);
     sqlite3_bind_int(stmt, 1, number);
     int rc = sqlite3_step(stmt);
@@ -123,7 +123,7 @@ void db_updateAdmin(db_t * self, admin_t * admin) {
 
 void db_deleteAdmin(db_t * self, int number) {
     sqlite3_stmt * stmt = NULL;
-    const char * sqlQuery = "DELETE FROM admins WHERE number == ?";
+    const char * sqlQuery = "DELETE FROM admins WHERE number = ?";
     sqlite3_prepare_v2(self->db, sqlQuery, strlen(sqlQuery), &stmt, 0);
     sqlite3_bind_int(stmt, 1, number);
     int rc = sqlite3_step(stmt);
