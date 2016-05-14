@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1463224650 source:d:\lab2\main.c
+	<stdio.h>
+	<windows.h>
+	<stdlib.h>
+	<string.h>
+	"libstatic.h"
+
+1461352946 d:\lab2\libstatic.h
+
