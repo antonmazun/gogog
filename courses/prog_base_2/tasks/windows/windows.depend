@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1463164567 source:c:\programs\codeblocks\projects\windows\main.c
+	<windows.h>
+	<CommCtrl.h>
+
+1463344028 source:d:\Загрузки\хуйня\-little-princess-master\-little-princess-master\courses\prog_base_2\tasks\windows\main.c
+	<windows.h>
+	<CommCtrl.h>
+
