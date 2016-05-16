@@ -80,3 +80,41 @@ void Deletebook::on_tableView_activated(const QModelIndex &index)
 
 
 }
+
+void Deletebook::on_pushButton_delete_clicked()
+{
+    QString genre , author; //;, year , name, desc;// = ui->tableView->model()->data(index).toString();
+    genre = ui->lineEdit_2->text();
+    author = ui->lineEdit->text();
+    QSqlQuery del;
+    del.prepare("Delete from Book where Genre = '"+genre+"' and Author = '"+author+"'");
+    if(del.exec()){
+        QMessageBox::information(0, "Delete", "Deleted book is succesfull");
+    }
+    else {
+          QMessageBox::information(0, "Delete", "Deleted book is  not succesfull");
+    }
+
+   /* QString valdel = ui->tableView->model()->data(index).toString();
+
+    QSqlQuery del;
+
+    del.prepare("select * from Book where Genre = '"+valdel+"'");
+    if(qry.exec()){
+
+        while(qry.next()){
+            ui->lineEdit_4->setText(qry.value(1).toString());
+            ui->lineEdit_2->setText(qry.value(0).toString());
+             ui->lineEdit->setText(qry.value(2).toString());
+              ui->lineEdit_3->setText(qry.value(3).toString());
+              ui->lineEdit_5->setText(qry.value(4).toString());
+        }
+    }
+    if(del.exec()){
+        QMessageBox::information(0, "Delete", "Deleted book is succesfull");
+    }
+    else {
+          QMessageBox::information(0, "Delete", "Deleted book is  not succesfull");
+    }
+    */
+}
