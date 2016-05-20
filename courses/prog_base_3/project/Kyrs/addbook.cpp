@@ -81,3 +81,11 @@ void Addbook::on_pushButton_save_clicked()
                     }
           }
 }
+
+void Addbook::on_pushButton_clicked()
+{
+    close();
+    All all;
+    all.setModal(true);
+    all.exec();
+}

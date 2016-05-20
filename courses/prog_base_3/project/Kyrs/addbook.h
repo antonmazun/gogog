@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButton_save_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Addbook *ui;
     QSqlDatabase bookdb;
