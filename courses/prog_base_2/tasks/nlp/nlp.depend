@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1463951913 source:d:\codeblocks\nlp\list.c
+	<stdlib.h>
+	"list.h"
+
+1463951636 d:\codeblocks\nlp\list.h
+
+1463954339 source:d:\codeblocks\nlp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"list.h"
+	"text.h"
+
+1463953302 source:d:\codeblocks\nlp\text.c
+	"text.h"
+	"list.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1463951617 d:\codeblocks\nlp\text.h
+
