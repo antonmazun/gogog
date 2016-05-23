@@ -26,10 +26,12 @@ private slots:
 
     void on_pushButton_delete_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Deletebook *ui;
-     QSqlDatabase delbd;
-      QSqlTableModel delmodel;
+    QSqlDatabase delbd;
+    QSqlTableModel delmodel;
 };
 
 #endif // DELETEBOOK_H

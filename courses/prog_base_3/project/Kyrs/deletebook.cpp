@@ -24,6 +24,33 @@ Deletebook::Deletebook(QWidget *parent) :
         qDebug() << "Success!";
 
    }
+
+  //  Deletebook delb;
+    QSqlQueryModel * modalbook = new QSqlQueryModel();
+
+    //conn.connOpen();
+    QSqlQuery * qrybook = new QSqlQuery(delbd);
+
+    qrybook->prepare("select Genre , Name , Author , Year  from Book");
+    qrybook->exec();
+
+    modalbook->setQuery(*qrybook);
+    ui->tableView->setModel(modalbook);
+   //delbd.close();
+
+
+    /*
+     QSqlQueryModel * model = new QSqlQueryModel();
+
+     QSqlQuery * qry = new QSqlQuery(mydb);
+
+     qry->prepare("select * from doctors");
+     qry->exec();
+     model->setQuery(*qry);
+     ui->tableView->setModel(model);
+
+     mydb.close();
+     qDebug()«(model->rowCount());*/
 }
 
 Deletebook::~Deletebook()
@@ -55,8 +82,6 @@ void Deletebook::on_pushButton_2_clicked()
     ui->tableView->setModel(modalbook);
 
 
-
-
 }
 
 void Deletebook::on_tableView_activated(const QModelIndex &index)
@@ -65,25 +90,25 @@ void Deletebook::on_tableView_activated(const QModelIndex &index)
 
     QSqlQuery qry;
 
-    qry.prepare("select * from Book where Genre = '"+val+"'");
+    qry.prepare("select * from Book where Genre = '"+val+"' or Name = '"+val+"' or Author = '"+val+"' or Year = '"+val+"'");
 
     if(qry.exec()){
 
         while(qry.next()){
             ui->lineEdit_4->setText(qry.value(1).toString());
             ui->lineEdit_2->setText(qry.value(0).toString());
-             ui->lineEdit->setText(qry.value(2).toString());
-              ui->lineEdit_3->setText(qry.value(3).toString());
-              ui->lineEdit_5->setText(qry.value(4).toString());
+            ui->lineEdit->setText(qry.value(2).toString());
+            ui->lineEdit_3->setText(qry.value(3).toString());
+            ui->lineEdit_5->setText(qry.value(4).toString());
         }
     }
 
-
 }
+//}
 
 void Deletebook::on_pushButton_delete_clicked()
 {
-    QString genre , author; //;, year , name, desc;// = ui->tableView->model()->data(index).toString();
+    QString genre , author;
     genre = ui->lineEdit_2->text();
     author = ui->lineEdit->text();
     QSqlQuery del;
@@ -117,4 +142,12 @@ void Deletebook::on_pushButton_delete_clicked()
           QMessageBox::information(0, "Delete", "Deleted book is  not succesfull");
     }
     */
+}
+
+void Deletebook::on_pushButton_clicked()
+{
+    close();
+    Search sh;
+    sh.setModal(true);
+    sh.exec();
 }

@@ -3,7 +3,8 @@
 
 #include <QDialog>
 #include "mainwindow1.h"
-
+#include <QLineEdit>
+#include "deletebook.h"
 namespace Ui {
 class Search;
 }
@@ -19,9 +20,28 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_tableView_activated(const QModelIndex &index);
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_del1_clicked();
+
+    void on_pushButton_update_clicked();
+
+    void on_pushButton_back_clicked();
+
 private:
     Ui::Search *ui;
     QSqlDatabase bkdb;
 };
 
 #endif // SEARCH_H
+
+
+
+
+
+
+
