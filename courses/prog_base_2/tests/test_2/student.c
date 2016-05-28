@@ -1,14 +1,13 @@
 #include "student.h"
+
 #include <libxml/xmlwriter.h>
 #include <stdlib.h>
 #include <string.h>
-#include <curl.h>
 
-
-char * student_to_xml(Student* s){
+char* student_to_xml(Student* s){
   xmlBufferPtr buf;
   xmlTextWriterPtr writer;
-  char * ret;
+  char* ret;
 
   buf = xmlBufferCreate();
   writer = xmlNewTextWriterMemory(buf, 0);
