@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1464430838 source:d:\codeblocks\kr22\list.c
+	"list.h"
+	<stdlib.h>
+
+1464430889 d:\codeblocks\kr22\list.h
+
+1464434037 source:d:\codeblocks\kr22\student.c
+	"student.h"
+	<libxml/xmlwriter.h>
+	<stdlib.h>
+	<string.h>
+	<curl.h>
+
+1464431174 d:\codeblocks\kr22\student.h
+	"encoding.h"
+
+1464431089 d:\codeblocks\kr22\encoding.h
+
+1464434340 source:d:\codeblocks\kr22\main.c
+	"student.h"
+	"list.h"
+	<libxml/parser.h>
+	"curl.h"
+	<stdlib.h>
+	<string.h>
+
+1463383413 d:\codeblocks\kr22\curl.h
+	"curlver.h"
+	"curlbuild.h"
+	"curlrules.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"typecheck-gcc.h"
+
