@@ -60,6 +60,12 @@ void Search::on_pushButton_clicked()
     QSqlQuery   src;
 
     QString str = "select * from Book where ";
+//    if (genre.size() == 0 && name.size() == 0 && author.size() == 0 && year.size() == 0){
+//        QMessageBox::critical( 0 , "Search" , "Input parametr search");
+
+//    }
+
+
     if (genre.size() > 0 && name.size() == 0 && author.size() == 0 && year.size() == 0)
     {
 
@@ -149,13 +155,27 @@ void Search::on_pushButton_clicked()
 
         str = "select * from Book where Name = '"+name+"' and Author = '"+author+"' and Year = '"+year+"' and Genre = '"+genre+"'";
     }
-                if(src.exec(str)){
+
+    else if(genre.size() == 0 && name.size() == 0 && author.size() == 0 && year.size() == 0){
+         QMessageBox::critical(0,"Search" , "vedite danie");
+
+    }
+    else{
+        QMessageBox::critical( 0 , "Search" , "ne nashlo");
+    }
+
+
+         if(src.exec(str)){
         int count = 0;
 
         while(src.next()){
 
             count++;
 
+//            if( count  > 1 || count < 1 )  {
+
+//                    QMessageBox::critical( 0 , "Search" , "ne nashlo");
+//           }
             QSqlQueryModel * srbook = new QSqlQueryModel();
             QSqlQuery * qrybook = new QSqlQuery(bkdb);
 
@@ -165,49 +185,15 @@ void Search::on_pushButton_clicked()
             srbook->setQuery(*qrybook);
             ui->tableView->setModel(srbook);
 
-        }
-
- //puts("adsfgfhh");
-        if(count == 1){
-
-           // puts("adsfgfhh");
-            // ui->label_status->setText("Norm");
-        }
-//             if (genre  == "1"){
-//                QSqlQueryModel * modal1 = new QSqlQueryModel();
-
-//                   modal1->setQuery(src);
-//                 ui->tableView->setModel(modal1);
-
-
-//}
-//        }
-
-        if( count  < 1)  {
-            //ui->label_status->setText("neNorm1 ");
 
        }
 
-            // or Name  = '" +name+"' or Author = '"+author+"'  or  Year = '"+year+"'")){
- /*else   if(src.exec("select * from Book where Name = '"+name+"' ")){
-
-       ui->label_status->setText("Norm1 ");
 
 
-}*/
+//        if( count  < 1 || count > 1 )  {
 
-
-
-
-//        if(count == 1 ){
-
-          //   ui->label_status->setText("Norm ");
-
-         /*  All admin;
-            admin.setModal(true);
-            admin.exec();*/
-       // }
-//}
+//                QMessageBox::critical( 0 , "Search" , "ne nashlo");
+//       }
 }
 }
 
@@ -249,12 +235,13 @@ void Search::on_pushButton_del1_clicked()
     author = ui->lineEdit_aut->text();
     QSqlQuery del;
     del.prepare("Delete from Book where Genre = '"+genre+"' and Author = '"+author+"'");
-    if(del.exec()){
+    if(genre.size() == 0 &&  author.size() == 0){
+        QMessageBox::information(0, "Non delete", "Deleted book is not succesfull");
+    }
+    else if(del.exec()){
         QMessageBox::information(0, "Delete", "Deleted book is succesfull");
     }
-    else {
-          QMessageBox::information(0, "Delete", "Deleted book is  not succesfull");
-    }
+
 
 }
 
@@ -274,6 +261,8 @@ void Search::on_pushButton_update_clicked()
 
     mdlb->setQuery(*qrbk);
     ui->tableView->setModel(mdlb);
+
+
 
 }
 
