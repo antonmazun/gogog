@@ -3,7 +3,7 @@
 #include "mainwindow1.h"
 #include "deletebook.h"
 #include <QSqlTableModel>
-
+#include <QLineEdit>
 Search::Search(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Search)
@@ -156,13 +156,13 @@ void Search::on_pushButton_clicked()
         str = "select * from Book where Name = '"+name+"' and Author = '"+author+"' and Year = '"+year+"' and Genre = '"+genre+"'";
     }
 
-    else if(genre.size() == 0 && name.size() == 0 && author.size() == 0 && year.size() == 0){
+     if(genre.size() == 0 && name.size() == 0 && author.size() == 0 && year.size() == 0){
          QMessageBox::critical(0,"Search" , "vedite danie");
 
     }
-    else{
-        QMessageBox::critical( 0 , "Search" , "ne nashlo");
-    }
+//    else{
+//        QMessageBox::critical( 0 , "Search" , "ne nashlo");
+//    }
 
 
          if(src.exec(str)){
@@ -190,10 +190,10 @@ void Search::on_pushButton_clicked()
 
 
 
-//        if( count  < 1 || count > 1 )  {
+        if( count == 0 )  {
 
-//                QMessageBox::critical( 0 , "Search" , "ne nashlo");
-//       }
+                QMessageBox::critical( 0 , "Search" , "ne nashlo");
+       }
 }
 }
 
@@ -230,9 +230,11 @@ void Search::on_tableView_activated(const QModelIndex &index)
 
 void Search::on_pushButton_del1_clicked()
 {
-    QString genre , author;
+    QString genre , author , name ,year;
     genre = ui->lineEdit_genre->text();
     author = ui->lineEdit_aut->text();
+    name  = ui->lineEdit_name->text();
+    year  =  ui->lineEdit_year->text();
     QSqlQuery del;
     del.prepare("Delete from Book where Genre = '"+genre+"' and Author = '"+author+"'");
     if(genre.size() == 0 &&  author.size() == 0){
@@ -240,8 +242,12 @@ void Search::on_pushButton_del1_clicked()
     }
     else if(del.exec()){
         QMessageBox::information(0, "Delete", "Deleted book is succesfull");
-    }
+         ui->lineEdit_genre->clear();
+         ui->lineEdit_aut->clear();
+         ui->lineEdit_name->clear();
+         ui->lineEdit_year->clear();
 
+    }
 
 }
 
@@ -249,19 +255,30 @@ void Search::on_pushButton_del1_clicked()
 void Search::on_pushButton_update_clicked()
 {
 
-   // Search delb1;
-    QSqlQueryModel * mdlb = new QSqlQueryModel();
+//   // Search delb1;
+//    QSqlQueryModel * mdlb = new QSqlQueryModel();
+
+//    //conn.connOpen();
+//    QSqlQuery * qrbk= new QSqlQuery(bkdb);
+
+//    //qrybook->prepare("select Genre , Name , Author , Year  from Book");
+//    qrbk->prepare("select * from Book ");
+//    qrbk->exec();
+
+//    mdlb->setQuery(*qrbk);
+//    ui->tableView->setModel(mdlb);
+
+    //Search delb1;
+    QSqlQueryModel * modalbook1 = new QSqlQueryModel();
 
     //conn.connOpen();
-    QSqlQuery * qrbk= new QSqlQuery(bkdb);
+    QSqlQuery * qrybook1 = new QSqlQuery(bkdb);
 
-    //qrybook->prepare("select Genre , Name , Author , Year  from Book");
-    qrbk->prepare("sselect * from Book ");
-    qrbk->exec();
+    qrybook1->prepare("select * from Book");
+    qrybook1->exec();
 
-    mdlb->setQuery(*qrbk);
-    ui->tableView->setModel(mdlb);
-
+    modalbook1->setQuery(*qrybook1);
+    ui->tableView->setModel(modalbook1);
 
 
 }
