@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1464385223 source:d:\codeblocks\lab3\event.c
+	"event.h"
+	<stdlib.h>
+	<stdio.h>
+
+1464037980 d:\codeblocks\lab3\event.h
+	"user.h"
+
+1464032066 d:\codeblocks\lab3\user.h
+	"event.h"
+	"list.h"
+
+1464038618 d:\codeblocks\lab3\list.h
+	"event.h"
+
+1464385289 source:d:\codeblocks\lab3\list.c
+	<stdlib.h>
+	"list.h"
+	"event.h"
+	<limits.h>
+
+1464040474 source:d:\codeblocks\lab3\user.c
+	"user.h"
+	<stdlib.h>
+
+1464648203 source:d:\codeblocks\lab3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+	"event.h"
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+
