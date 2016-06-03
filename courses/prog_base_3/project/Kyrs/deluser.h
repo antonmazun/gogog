@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::Deluser *ui;
-    QSqlDatabase delusbd;
+QSqlDatabase delusbd;
 };
 
 #endif // DELUSER_H

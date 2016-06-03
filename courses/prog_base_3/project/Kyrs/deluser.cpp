@@ -1,6 +1,7 @@
 #include "deluser.h"
 #include "ui_deluser.h"
 #include "mainwindow1.h"
+#include "searchuser.h"
 Deluser::Deluser(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Deluser)
@@ -75,7 +76,7 @@ void Deluser::on_tableView_activated(const QModelIndex &index)
 
 void Deluser::on_pushButton_deluser_clicked()
 {
-    QString name , surname;
+    QString name , surname ,username;
     name = ui->lineEdit_name_del->text();
     surname = ui->lineEdit_sur_del->text();
     if(name.size() == 0 &&  surname.size() == 0){
@@ -87,6 +88,9 @@ void Deluser::on_pushButton_deluser_clicked()
     if(del.exec()){
         QMessageBox::information(0, "Delete", "Deleted user is succesfull");
 
+        ui->lineEdit_name_del->clear();
+         ui->lineEdit_sur_del->clear();
+         ui->lineEdit_user_del->clear();
 
     }
     else {
@@ -114,42 +118,9 @@ void Deluser::on_pushButton_update_clicked()
 
 void Deluser::on_pushButton_search_delus_clicked()
 {
-
-    QString surname , name , username ;
-
-
-   name =  ui->lineEdit_name_del->text();
-   surname = ui->lineEdit_sur_del->text();
-   username = ui->lineEdit_user_del->text();
-
-
-
-
-    if(!delusbd.isOpen()){
-        qDebug() << "Failed to opened database";
-        return;
-    }
-    QSqlQuery   src;
-    QString str = "select * from Book where ";
-
-    if (name.size() > 0 && surname.size() == 0 && username.size() == 0)
-    {
-
-        str = "select * from Reg where Name = '"+name+"'";
-    }
-
-    if (name.size() == 0 && surname.size() > 0 && username.size() == 0)
-    {
-
-        str = "select * from Reg where Surname = '"+surname+"'";
-    }
-
-    if (name.size() == 0 && surname.size() == 0 && username.size() > 0)
-    {
-
-        str = "select * from Reg where Username = '"+username+"'";
-    }
-
-
+    close();
+    Searchuser srch;
+    srch.setModal(true);
+    srch.exec();
 
 }

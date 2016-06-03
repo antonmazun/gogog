@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Searchbook</class>
+ <widget class="QDialog" name="Searchbook">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>655</width>
+    <height>273</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-color: rgb(124, 255, 218);
+background-color: qlineargradient(spread:reflect, x1:0, y1:0.488636, x2:1, y2:0.483, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(254, 252, 255, 243));
+/*background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0.915254, y2:0.108, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qlineargradient(spread:pad, x1:0.0110455, y1:0.443, x2:0.988636, y2:0.449, stop:0.136364 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qlineargradient(spread:pad, x1:0.0110455, y1:0.443, x2:0.988636, y2:0.449, stop:0.136364 rgba(111, 72, 72, 255), stop:1 rgba(255, 255, 255, 255));
+*/
+gridline-color: rgb(178, 255, 250);</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit_genre1">
+   <property name="geometry">
+    <rect>
+     <x>82</x>
+     <y>13</y>
+     <width>191</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Segoe Script&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_name1">
+   <property name="geometry">
+    <rect>
+     <x>82</x>
+     <y>43</y>
+     <width>191</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Segoe Script&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_aut1">
+   <property name="geometry">
+    <rect>
+     <x>82</x>
+     <y>73</y>
+     <width>191</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Segoe Script&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_year1">
+   <property name="geometry">
+    <rect>
+     <x>82</x>
+     <y>103</y>
+     <width>191</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Segoe Script&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView_1">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>0</y>
+     <width>371</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit1">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>261</width>
+     <height>81</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe Script'; font-size:12pt; font-weight:72; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Descriptions&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Descriptions</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>250</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Назад</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>250</y>
+     <width>168</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton_search_1">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Пошук</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_take">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Вибрати книгу </string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>11</y>
+     <width>64</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Genre</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Author</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="styleSheet">
+       <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Year</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

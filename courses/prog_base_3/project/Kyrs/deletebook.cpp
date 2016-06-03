@@ -111,15 +111,27 @@ void Deletebook::on_pushButton_delete_clicked()
     QString genre , author;
     genre = ui->lineEdit_2->text();
     author = ui->lineEdit->text();
+    if(genre.size() == 0 &&  author.size() == 0){
+        QMessageBox::information(0, "Non delete", "Deleted book is not succesfull");
+    }
+    else{
     QSqlQuery del;
     del.prepare("Delete from Book where Genre = '"+genre+"' and Author = '"+author+"'");
     if(del.exec()){
         QMessageBox::information(0, "Delete", "Deleted book is succesfull");
+      ui-> lineEdit_2->clear();
+       ui->lineEdit->clear();
+       ui->lineEdit_3->clear();
+       ui->lineEdit_4->clear();
+       ui->lineEdit_5->clear();
+
     }
     else {
           QMessageBox::information(0, "Delete", "Deleted book is  not succesfull");
     }
 
+
+}
    /* QString valdel = ui->tableView->model()->data(index).toString();
 
     QSqlQuery del;

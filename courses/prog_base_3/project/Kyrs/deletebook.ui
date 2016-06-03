@@ -61,7 +61,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Показати всі книги</string>
+    <string>Оновити</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
