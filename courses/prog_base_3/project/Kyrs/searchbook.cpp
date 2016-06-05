@@ -2,13 +2,17 @@
 #include "ui_searchbook.h"
 #include "mainwindow1.h"
 #include "entry.h"
+#include <stdlib.h>
+#include <QFileDialog>
+#include <QFileInfo>
+#include <QMessageBox>
 Searchbook::Searchbook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Searchbook)
 {
     ui->setupUi(this);
 
-
+setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
 
     srcbd = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -25,16 +29,15 @@ Searchbook::Searchbook(QWidget *parent) :
 
    }
 
+
     //All conn;
-    QSqlQueryModel * modalbk = new QSqlQueryModel();
+    QSqlQueryModel * modalbk3 = new QSqlQueryModel();
+   QSqlQuery * qry3 = new QSqlQuery(srcbd);
+   qry3->prepare("select Genre ,Name , Author , Year from Book where  Status = '0'");
+   qry3->exec();
 
-    //conn.connOpen();
-    QSqlQuery * qry = new QSqlQuery(srcbd);
-    qry->prepare("select Genre ,Name , Author , Year from Book");
-    qry->exec();
-
-    modalbk->setQuery(*qry);
-    ui->tableView_1->setModel(modalbk);
+   modalbk3->setQuery(*qry3);
+   ui->tableView_1->setModel(modalbk3);
 
 
 }
@@ -81,6 +84,7 @@ void Searchbook::on_pushButton_clicked()
 
 void Searchbook::on_pushButton_search_1_clicked()
 {
+  //  srcbd.isOpen();
     QString genre1 , name1 , author1 , year1;
 
    genre1 = ui->lineEdit_genre1->text();
@@ -90,7 +94,7 @@ void Searchbook::on_pushButton_search_1_clicked()
 
 
 
-
+    srcbd.open();
     if(!srcbd.isOpen()){
         qDebug() << "Failed to opened database";
         return;
@@ -200,9 +204,7 @@ void Searchbook::on_pushButton_search_1_clicked()
          QMessageBox::critical(0,"Search" , "vedite danie");
 
     }
-//    else{
-//        QMessageBox::critical( 0 , "Search" , "ne nashlo");
-//    }
+
 
 
          if(src.exec(str)){
@@ -212,10 +214,7 @@ void Searchbook::on_pushButton_search_1_clicked()
 
             count++;
 
-//            if( count  > 1 || count < 1 )  {
 
-//                    QMessageBox::critical( 0 , "Search" , "ne nashlo");
-//           }
             QSqlQueryModel * srbook = new QSqlQueryModel();
             QSqlQuery * qrybook = new QSqlQuery(srcbd);
 
@@ -224,8 +223,15 @@ void Searchbook::on_pushButton_search_1_clicked()
 
             srbook->setQuery(*qrybook);
             ui->tableView_1->setModel(srbook);
+/*
+            QSqlQueryModel * srbook = new QSqlQueryModel();
+            QSqlQuery * qrybook = new QSqlQuery(srcbd);
+            qrybook->prepare("select Genre ,Name , Author , Year from Book");
+            qrybook->exec();
 
-
+            srbook->setQuery(*qrybook);
+            ui->tableView_1->setModel(srbook);
+*/
        }
 
 
@@ -236,7 +242,6 @@ void Searchbook::on_pushButton_search_1_clicked()
 
                 QSqlQueryModel * modalbk = new QSqlQueryModel();
 
-                //conn.connOpen();
                 QSqlQuery * qry = new QSqlQuery(srcbd);
                 qry->prepare("select Genre ,Name , Author , Year from Book");
                 qry->exec();
@@ -249,15 +254,82 @@ void Searchbook::on_pushButton_search_1_clicked()
                 ui->lineEdit_genre1->clear();
                 ui->lineEdit_name1->clear();
                 ui->lineEdit_year1->clear();
-       }
+                srcbd.close();
 
+       }
 }
+
 }
 
 void Searchbook::on_pushButton_take_clicked()
 {
 
+    QString nametake , authortake,sign,idd;
 
+    nametake = ui->lineEdit_name1->text();
+    authortake = ui->lineEdit_aut1->text();
+    sign = "1";
+    regg = QSqlDatabase::addDatabase("QSQLITE");
+    regg.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
+    regg.open();
+
+    QSqlQuery query("SELECT * FROM  Reg where Sign = '"+sign+"'");
+
+    while(query.next()){
+        idd = query.value(4).toString();
+        ui->lineEdit1->setText(idd);
+    }
+
+ regg.close();
+    srcbd = QSqlDatabase::addDatabase("QSQLITE");
+    srcbd.setDatabaseName("D:/Kyrs/Kyrs/Book.db");
+    srcbd.open();
+    if(!srcbd.isOpen()){
+        puts("jkk");
+    }
+
+    QSqlQuery book11111;
+    book11111.prepare("update Book set Status = '"+idd+"' where Name = '"+nametake+"' and Author  = '"+authortake+"'");
+    if(book11111.exec()){
+        QMessageBox::information(0 , "Select" , "Select book is succesfull");
+        ui->lineEdit1->clear();
+        ui->lineEdit_aut1->clear();
+        ui->lineEdit_genre1->clear();
+        ui->lineEdit_name1->clear();
+        ui->lineEdit_year1->clear();
+         QSqlQueryModel * modalbk2 = new QSqlQueryModel();
+        QSqlQuery * qry2 = new QSqlQuery(srcbd);
+        qry2->prepare("select Genre ,Name , Author , Year from Book where  Status = '0'");
+        qry2->exec();
+
+        modalbk2->setQuery(*qry2);
+        ui->tableView_1->setModel(modalbk2);
+    }
 
 }
+
+
+void Searchbook::on_pushButton_2_clicked()
+{
+     dbregsrc = QSqlDatabase::addDatabase("QSQLITE");
+    dbregsrc.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
+
+  dbregsrc.isOpen();
+    puts("saadfgh");
+     QString sign = "0";
+     QString signf = "1";
+     QSqlQuery qryf;
+
+     qryf.prepare("Update Reg set Sign = '"+sign+"' where Sign = '"+signf+"'");
+     if(qryf.exec()){
+         dbregsrc.close();
+         close();
+         MainWindow1 signin;
+         signin.show();
+
+     }
+
+}
+
+
 

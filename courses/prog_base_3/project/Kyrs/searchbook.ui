@@ -58,7 +58,8 @@ gridline-color: rgb(178, 255, 250);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 8pt &quot;Segoe Script&quot;;</string>
+    <string notr="true">font: 8pt &quot;Segoe Script&quot;;
+background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_year1">
@@ -71,7 +72,8 @@ gridline-color: rgb(178, 255, 250);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 8pt &quot;Segoe Script&quot;;</string>
+    <string notr="true">font: 8pt &quot;Segoe Script&quot;;
+background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QTableView" name="tableView_1">
@@ -138,7 +140,7 @@ color:rgb(255, 0, 0);</string>
     <string>Назад</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -170,7 +172,7 @@ color:rgb(255, 0, 0);</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>11</x>
@@ -230,6 +232,19 @@ color:rgb(255, 0, 0);</string>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>250</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Зайняті мною книги</string>
+   </property>
   </widget>
  </widget>
  <resources/>

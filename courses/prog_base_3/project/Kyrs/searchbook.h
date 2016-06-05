@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QSqlDatabase>
+#include <QSqlQuery>
 #include "mainwindow.h"
 namespace Ui {
 class Searchbook;
@@ -26,10 +27,18 @@ private slots:
 
     void on_pushButton_take_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Searchbook *ui;
     QSqlDatabase srcbd;
      QSqlTableModel srcmodel;
+     QSqlDatabase dbregsrc;
+     QSqlDatabase regg;
+      QSqlDatabase bookdb1;
+      QSqlDatabase bdact;
+      QSqlDatabase bdsearch1;
+      QSqlDatabase bdtake;
 };
 
 #endif // SEARCHBOOK_H
