@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admins>
+  <admin>
+    <name>Ivan</name>
+    <surname>Ivqanov</surname>
+    <birthdate>1976</birthdate>
+    <rate>0.000000</rate>
+    <creating_year>2004</creating_year>
+    <followers>85464</followers>
+  </admin>
+  <admin>
+    <name>Misha</name>
+    <surname>Mishac</surname>
+    <birthdate>1965</birthdate>
+    <rate>0.000000</rate>
+    <creating_year>2010</creating_year>
+    <followers>87643</followers>
+  </admin>
+  <admin>
+    <name>Borya</name>
+    <surname>Lemesh</surname>
+    <birthdate>1998</birthdate>
+    <rate>0.000000</rate>
+    <creating_year>2001</creating_year>
+    <followers>764986</followers>
+  </admin>
+  <admin>
+    <name>Sanya</name>
+    <surname>Pupkin</surname>
+    <birthdate>1994</birthdate>
+    <rate>0.000000</rate>
+    <creating_year>1977</creating_year>
+    <followers>23045</followers>
+  </admin>
+</admins>
