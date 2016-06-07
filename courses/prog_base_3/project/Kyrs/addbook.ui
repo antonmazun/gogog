@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>274</width>
-    <height>237</height>
+    <width>317</width>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pushButton_save">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>190</y>
      <width>75</width>
      <height>23</height>
@@ -29,7 +29,7 @@
   <widget class="QLabel" name="label_status">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>30</x>
      <y>250</y>
      <width>361</width>
      <height>41</height>
@@ -42,7 +42,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>30</x>
      <y>45</y>
      <width>196</width>
      <height>128</height>
@@ -51,18 +51,6 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="label_aut">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Автор</string>
-        </property>
-       </widget>
-      </item>
       <item>
        <widget class="QLabel" name="label_3">
         <property name="font">
@@ -84,6 +72,18 @@
         </property>
         <property name="text">
          <string>Назва</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_aut">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Автор</string>
         </property>
        </widget>
       </item>
@@ -123,9 +123,6 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QLineEdit" name="lineEdit_aut"/>
-      </item>
-      <item>
        <widget class="QLineEdit" name="lineEdit_genre"/>
       </item>
       <item>
@@ -134,6 +131,9 @@
          <string/>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_aut"/>
       </item>
       <item>
        <widget class="QLineEdit" name="lineEdit_year"/>
@@ -148,7 +148,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>40</x>
      <y>190</y>
      <width>75</width>
      <height>23</height>
@@ -156,6 +156,19 @@
    </property>
    <property name="text">
     <string>Назад</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_info">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
