@@ -9,7 +9,7 @@ Deletebook::Deletebook(QWidget *parent) :
     ui(new Ui::Deletebook)
 {
     ui->setupUi(this);
-
+setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
     delbd = QSqlDatabase::addDatabase("QSQLITE");
 
     delbd.setDatabaseName("D:/Kyrs/Kyrs/Book.db");
@@ -162,4 +162,9 @@ void Deletebook::on_pushButton_clicked()
     Search sh;
     sh.setModal(true);
     sh.exec();
+}
+
+void Deletebook::on_pushButton_4_clicked()
+{
+    close();
 }
