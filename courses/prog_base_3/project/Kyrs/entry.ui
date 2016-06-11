@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Entry</class>
+ <widget class="QDialog" name="Entry">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>340</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>340</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>341</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 247, 251)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color :rgb(255, 255, 255);
+font: 20pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Welcome reader!</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_search_3">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>211</y>
+     <width>104</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 75 8pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Вибрати книгу</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>251</x>
+     <y>211</y>
+     <width>75</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 75 8pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Вийти</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>111</x>
+     <y>211</y>
+     <width>134</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 75 8pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Видалити сторінку</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
