@@ -9,12 +9,12 @@ Deluser::Deluser(QWidget *parent) :
     ui->setupUi(this);
 
 
-
+setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
     delusbd = QSqlDatabase::addDatabase("QSQLITE");
 
     delusbd.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
-
-    if(!delusbd.open()){
+    delusbd.open();
+    if(!delusbd.isOpen()){
 
         qDebug() << delusbd.lastError().text();
          return;
@@ -55,7 +55,7 @@ void Deluser::on_pushButton_back_deluser_clicked()
 
 void Deluser::on_tableView_activated(const QModelIndex &index)
 {
-    delusbd.isOpen();
+  //  delusbd.open();
     QString val = ui->tableView->model()->data(index).toString();
 
     QSqlQuery qry;
@@ -71,11 +71,12 @@ void Deluser::on_tableView_activated(const QModelIndex &index)
 
         }
     }
-
+//delusbd.close();
 }
 
 void Deluser::on_pushButton_deluser_clicked()
 {
+    delusbd.open();
     QString name , surname ,username;
     name = ui->lineEdit_name_del->text();
     surname = ui->lineEdit_sur_del->text();
@@ -91,6 +92,7 @@ void Deluser::on_pushButton_deluser_clicked()
         ui->lineEdit_name_del->clear();
          ui->lineEdit_sur_del->clear();
          ui->lineEdit_user_del->clear();
+         on_pushButton_update_clicked();
 
     }
     else {
@@ -98,10 +100,12 @@ void Deluser::on_pushButton_deluser_clicked()
     }
 
 }
+     //delusbd.close();
 }
 
 void Deluser::on_pushButton_update_clicked()
 {
+    delusbd.open();
     Deluser deluser;
     QSqlQueryModel * modaluser = new QSqlQueryModel();
 
@@ -113,7 +117,7 @@ void Deluser::on_pushButton_update_clicked()
 
     modaluser->setQuery(*qryuser);
     ui->tableView->setModel(modaluser);
-
+delusbd.close();
 }
 
 void Deluser::on_pushButton_search_delus_clicked()
@@ -123,4 +127,10 @@ void Deluser::on_pushButton_search_delus_clicked()
     srch.setModal(true);
     srch.exec();
 
+
+}
+
+void Deluser::on_pushButton_clicked()
+{
+    close();
 }

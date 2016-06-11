@@ -34,7 +34,7 @@ private slots:
 
 private:
     Ui::Search *ui;
-    QSqlDatabase bkdb;
+   QSqlDatabase bkdb;
 };
 
 #endif // SEARCH_H

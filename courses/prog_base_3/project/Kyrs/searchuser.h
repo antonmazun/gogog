@@ -27,9 +27,12 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::Searchuser *ui;
-    QSqlDatabase delusbd;
+    QSqlDatabase searchbd;
+     QSqlDatabase searchbd1;
 };
 
 #endif // SEARCHUSER_H

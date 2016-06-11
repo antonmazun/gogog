@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButton_search_delus_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Deluser *ui;
 QSqlDatabase delusbd;

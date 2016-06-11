@@ -6,27 +6,31 @@ Searchuser::Searchuser(QWidget *parent) :
     ui(new Ui::Searchuser)
 {
     ui->setupUi(this);
-    delusbd = QSqlDatabase::addDatabase("QSQLITE");
-    delusbd.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
+    setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
+   /* searchbd = QSqlDatabase::addDatabase("QSQLITE");
+    searchbd.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
+    searchbd.open();
    // dbadm.setDatabaseName("D:/Kyrs/Kyrs/Admins.db");
-    if(!delusbd.open()){
-        qDebug() << delusbd.lastError().text();
+    if(!searchbd.open()){
+        qDebug() << searchbd.lastError().text();
          return;
      }
      else {
         qDebug() << "Success!";
    }
+   // searchbd.close();
+
     QSqlQueryModel * mdlb = new QSqlQueryModel();
 
     //conn.connOpen();
-    QSqlQuery * qrbk= new QSqlQuery(delusbd);
+    QSqlQuery * qrbk= new QSqlQuery(searchbd);
 
     //qrybook->prepare("select Genre , Name , Author , Year  from Book");
-    qrbk->prepare("sselect * from Reg ");
+    qrbk->prepare("select Name , Surname , Username from Reg ");
     qrbk->exec();
 
     mdlb->setQuery(*qrbk);
-    ui->tableView->setModel(mdlb);
+    ui->tableView->setModel(mdlb);*/
 }
 
 Searchuser::~Searchuser()
@@ -37,7 +41,12 @@ Searchuser::~Searchuser()
 
 void Searchuser::on_pushButton_3_clicked()
 {
-
+    searchbd1 = QSqlDatabase::addDatabase("QSQLITE");
+    searchbd1.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
+    searchbd1.open();
+    if( searchbd1.isOpen()){
+        puts("ssfds");
+    }
     QString surname , name , username ;
 
 
@@ -48,10 +57,7 @@ void Searchuser::on_pushButton_3_clicked()
 
 
 
-    if(!delusbd.isOpen()){
-        qDebug() << "Failed to opened database";
-        return;
-    }
+
     QSqlQuery src;
     QString str = "select * from Reg where";
 
@@ -87,13 +93,6 @@ void Searchuser::on_pushButton_3_clicked()
      QMessageBox::critical(0,"Search" , "vedite usera");
 
     }
-//    else{
-//        QMessageBox::critical( 0 , "Search" , "ne nashlo");
-//    }
-//    if(!src.exec(str)){
-
-//        QMessageBox::critical( 0 , "Search" , "ne nashlo");
-//}
 
     if(src.exec(str)){
    int count = 0;
@@ -103,7 +102,7 @@ void Searchuser::on_pushButton_3_clicked()
        count++;
 
        QSqlQueryModel * srdelus = new QSqlQueryModel();
-       QSqlQuery * qryusdel = new QSqlQuery(delusbd);
+       QSqlQuery * qryusdel = new QSqlQuery(searchbd1);
 
        qryusdel->prepare(str);
        qryusdel->exec();
@@ -111,8 +110,10 @@ void Searchuser::on_pushButton_3_clicked()
        srdelus->setQuery(*qryusdel);
        ui->tableView->setModel(srdelus);
 
-
   }
+
+
+
    if( count == 0 )  {
 
            QMessageBox::critical( 0 , "Search" , "ne nashlo");
@@ -132,7 +133,7 @@ void Searchuser::on_pushButton_2_clicked()
 
 void Searchuser::on_tableView_activated(const QModelIndex &index)
 {
-    delusbd.isOpen();
+    searchbd.open();
     QString val = ui->tableView->model()->data(index).toString();
 
     QSqlQuery qry;
@@ -160,10 +161,10 @@ void Searchuser::on_pushButton_clicked()
     QSqlQuery del;
     del.prepare("Delete from Reg where Name = '"+name+"' and Surname = '"+surname+"'");
     if(name.size() == 0 &&  surname.size() == 0){
-        QMessageBox::information(0, "Non delete", "Deleted book is not succesfull");
+        QMessageBox::information(0, "Non delete", "Deleted user is not succesfull");
     }
     else if(del.exec()){
-        QMessageBox::information(0, "Delete", "Deleted book is succesfull");
+        QMessageBox::information(0, "Delete", "Deleted user is succesfull");
          ui->lineEdit_name->clear();
          ui->lineEdit_surname->clear();
          ui->lineEdit_username->clear();
@@ -180,7 +181,7 @@ void Searchuser::on_pushButton_4_clicked()
     QSqlQueryModel * modas = new QSqlQueryModel();
 
     //conn.connOpen();
-    QSqlQuery * qrys = new QSqlQuery(search.delusbd);
+    QSqlQuery * qrys = new QSqlQuery(search.searchbd);
 
     qrys->prepare("select * from Reg");
     qrys->exec();
@@ -189,4 +190,9 @@ void Searchuser::on_pushButton_4_clicked()
     ui->tableView->setModel(modas);
 
 
+}
+
+void Searchuser::on_pushButton_5_clicked()
+{
+    close();
 }

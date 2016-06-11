@@ -9,7 +9,7 @@ Search::Search(QWidget *parent) :
     ui(new Ui::Search)
 {
     ui->setupUi(this);
-
+setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
 
     bkdb = QSqlDatabase::addDatabase("QSQLITE");
     bkdb.setDatabaseName("D:/Kyrs/Kyrs/Book.db");
@@ -242,6 +242,7 @@ void Search::on_pushButton_del1_clicked()
     }
     else if(del.exec()){
         QMessageBox::information(0, "Delete", "Deleted book is succesfull");
+        //on_pushButton_clicked();
          ui->lineEdit_genre->clear();
          ui->lineEdit_aut->clear();
          ui->lineEdit_name->clear();

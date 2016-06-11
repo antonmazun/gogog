@@ -13,7 +13,7 @@ setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
     delbd = QSqlDatabase::addDatabase("QSQLITE");
 
     delbd.setDatabaseName("D:/Kyrs/Kyrs/Book.db");
-
+   // delbd.open();
     if(!delbd.open()){
 
         qDebug() << delbd.lastError().text();
@@ -31,7 +31,7 @@ setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
     //conn.connOpen();
     QSqlQuery * qrybook = new QSqlQuery(delbd);
 
-    qrybook->prepare("select Genre , Name , Author , Year  from Book");
+    qrybook->prepare("select Genre , Name , Author , Year   from Book where Status = '0'");
     qrybook->exec();
 
     modalbook->setQuery(*qrybook);
@@ -68,18 +68,7 @@ void Deletebook::on_pushButton_3_clicked()
 
 void Deletebook::on_pushButton_2_clicked()
 {
-
-    Deletebook delb;
-    QSqlQueryModel * modalbook = new QSqlQueryModel();
-
-    //conn.connOpen();
-    QSqlQuery * qrybook = new QSqlQuery(delb.delbd);
-
-    qrybook->prepare("select Genre , Name , Author , Year  from Book");
-    qrybook->exec();
-
-    modalbook->setQuery(*qrybook);
-    ui->tableView->setModel(modalbook);
+    close();
 
 
 }
@@ -119,7 +108,17 @@ void Deletebook::on_pushButton_delete_clicked()
     del.prepare("Delete from Book where Genre = '"+genre+"' and Author = '"+author+"'");
     if(del.exec()){
         QMessageBox::information(0, "Delete", "Deleted book is succesfull");
-      ui-> lineEdit_2->clear();
+        QSqlQueryModel * modalbook = new QSqlQueryModel();
+
+        //conn.connOpen();
+        QSqlQuery * qrybook = new QSqlQuery(delbd);
+
+        qrybook->prepare("select Genre , Name , Author , Year   from Book where Status = '0'");
+        qrybook->exec();
+
+        modalbook->setQuery(*qrybook);
+        ui->tableView->setModel(modalbook);
+       ui-> lineEdit_2->clear();
        ui->lineEdit->clear();
        ui->lineEdit_3->clear();
        ui->lineEdit_4->clear();
@@ -162,6 +161,7 @@ void Deletebook::on_pushButton_clicked()
     Search sh;
     sh.setModal(true);
     sh.exec();
+
 }
 
 void Deletebook::on_pushButton_4_clicked()

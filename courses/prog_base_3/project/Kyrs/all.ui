@@ -7,35 +7,266 @@
     <x>0</x>
     <y>0</y>
     <width>714</width>
-    <height>300</height>
+    <height>303</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>501</width>
-     <height>281</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>70</y>
-     <width>121</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Submit</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">/*border-color: rgb(124, 255, 218);*/
+/*background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0.915254, y2:0.108, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));
+background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0.915254, y2:0.108, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(255, 255, 0, 69), stop:0.375 rgba(255, 255, 0, 69), stop:0.423533 rgba(251, 255, 0, 145), stop:0.45 rgba(247, 255, 0, 208), stop:0.477581 rgba(255, 244, 71, 130), stop:0.518717 rgba(255, 218, 71, 130), stop:0.55 rgba(255, 255, 0, 255), stop:0.57754 rgba(255, 203, 0, 130), stop:0.625 rgba(255, 255, 0, 69), stop:1 rgba(255, 255, 0, 69));*/
+/*background-color: qlineargradient(spread:reflect, x1:0, y1:0.488636, x2:1, y2:0.483, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(254, 252, 255, 243));*
+/*background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0.915254, y2:0.108, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qlineargradient(spread:pad, x1:0.0110455, y1:0.443, x2:0.988636, y2:0.449, stop:0.136364 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qlineargradient(spread:pad, x1:0.0110455, y1:0.443, x2:0.988636, y2:0.449, stop:0.136364 rgba(111, 72, 72, 255), stop:1 rgba(255, 255, 255, 255));
+*/
+/*gridline-color: rgb(178, 255, 250);*/</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>694</width>
+        <height>283</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" rowspan="4">
+        <widget class="QTableView" name="tableView">
+         <property name="styleSheet">
+          <string notr="true">background-color : rgb(255,255,255);</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <family>Segoe Script</family>
+               <pointsize>12</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Жанр</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_name_book">
+             <property name="font">
+              <font>
+               <family>Segoe Script</family>
+               <pointsize>12</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Назва</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_aut">
+             <property name="font">
+              <font>
+               <family>Segoe Script</family>
+               <pointsize>12</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Автор</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <family>Segoe Script</family>
+               <pointsize>12</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Рік</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <family>Segoe Script</family>
+               <pointsize>12</pointsize>
+               <weight>9</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Опис</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="lineEdit_genre">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_name_add_book">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_aut">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_year">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_des">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="pushButton_save">
+           <property name="styleSheet">
+            <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Зберегти</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="styleSheet">
+            <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Назад</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="styleSheet">
+            <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Вихід</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_info">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+  <zorder>layoutWidget</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_save</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder></zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>scrollArea</zorder>
  </widget>
  <resources/>
  <connections/>

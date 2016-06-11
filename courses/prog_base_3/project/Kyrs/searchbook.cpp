@@ -6,6 +6,7 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
+
 Searchbook::Searchbook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Searchbook)
@@ -17,6 +18,7 @@ setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
     srcbd = QSqlDatabase::addDatabase("QSQLITE");
 
     srcbd.setDatabaseName("D:/Kyrs/Kyrs/Book.db");
+
 
     if(!srcbd.open()){
 
@@ -39,7 +41,7 @@ setWindowFlags( Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint );
    modalbk3->setQuery(*qry3);
    ui->tableView_1->setModel(modalbk3);
 
-
+srcbd.close();
 }
 
 Searchbook::~Searchbook()
@@ -55,19 +57,21 @@ void Searchbook::on_tableView_1_activated(const QModelIndex &index)
     QString val = ui->tableView_1->model()->data(index).toString();
 
     QSqlQuery qry;
-
-    qry.prepare("select * from Book where Genre = '"+val+"' or Name = '"+val+"' or Author = '"+val+"' or Year = '"+val+"'");
+    srcbd.open();
+    qry.prepare("select * from Book where   Genre = '"+val+"' or Name = '"+val+"' or Author = '"+val+"' or Year = '"+val+"'");
 
     if(qry.exec()){
 
         while(qry.next()){
-            ui->lineEdit_name1->setText(qry.value(1).toString());
             ui->lineEdit_genre1->setText(qry.value(0).toString());
+            ui->lineEdit_name1->setText(qry.value(1).toString());
             ui->lineEdit_aut1->setText(qry.value(2).toString());
             ui->lineEdit_year1->setText(qry.value(3).toString());
             ui->lineEdit1->setText(qry.value(4).toString());
         }
+        srcbd.close();
     }
+
 
 }
 
@@ -101,110 +105,107 @@ void Searchbook::on_pushButton_search_1_clicked()
     }
 
 
-    QSqlQuery   src;
+    QSqlQuery  src;
+
 
     QString str = "select * from Book where ";
-//    if (genre1.size() == 0 && name1.size() == 0 && author1.size() == 0 && year1.size() == 0){
-//        QMessageBox::critical( 0 , "Search" , "Input parametr search");
 
-//    }
 
 
     if (genre1.size() > 0 && name1.size() == 0 && author1.size() == 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Genre = '"+genre1+"'";
+        str = "select * from Book where Genre = '"+genre1+"'  and Status = '0'";
     }
 
     if (genre1.size() == 0 && name1.size() > 0 && author1.size() == 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Name= '"+name1+"'";
+        str = "select * from Book where Name= '"+name1+"' and Status = '0'";
     }
 
     if (genre1.size() == 0 && name1.size() == 0 && author1.size()  > 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Author= '"+author1+"'";
+        str = "select * from Book where Author= '"+author1+"' and Status = '0'";
     }
 
     if (genre1.size() == 0 && name1.size() == 0 && author1.size()  == 0 && year1.size() > 0)
     {
 
-        str = "select * from Book where Year= '"+year1+"'";
+        str = "select * from Book where Year= '"+year1+"' and Status = '0'";
     }
 
     if (genre1.size() > 0 && name1.size() > 0 && author1.size()  == 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Name= '"+name1+"'";
+        str = "select * from Book where Name= '"+name1+"'and Genre = '"+genre1+"' and Status = '0'";
     }
 
 
     if (genre1.size() > 0 && name1.size() == 0 && author1.size()  > 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Author= '"+author1+"'";
+        str = "select * from Book where Author= '"+author1+"' and Genre = '"+genre1+"' and Status = '0'";
     }
 
     if (genre1.size() > 0 && name1.size() == 0 && author1.size()  == 0 && year1.size() > 0)
     {
 
-        str = "select * from Book where Year= '"+year1+"'";
+        str = "select * from Book where Year= '"+year1+"' and Genre = '"+genre1+"' and Status = '0'";
     }
 
     if (genre1.size() == 0 && name1.size() > 0 && author1.size()  > 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Author= '"+author1+"'";
+        str = "select * from Book where Author= '"+author1+"' and Name = '"+name1+"' and Status = '0'";
     }
 
     if (genre1.size() == 0 && name1.size() > 0 && author1.size()  == 0 && year1.size() > 0)
     {
 
-        str = "select * from Book where Year= '"+year1+"'";
+        str = "select * from Book where Year= '"+year1+"' and Year  = '"+name1+"'and Status = '0'";
     }
 
     if (genre1.size() == 0 && name1.size() == 0 && author1.size()  > 0 && year1.size() > 0)
     {
 
-        str = "select * from Book where Year= '"+year1+"'";
+        str = "select * from Book where Year= '"+year1+"' and Author  = '"+author1+"' and Status = '0'";
     }
 
     if (genre1.size() > 0 && name1.size() > 0 && author1.size()  > 0 && year1.size() == 0)
     {
 
-        str = "select * from Book where Author= '"+author1+"'";
+        str = "select * from Book where Author= '"+author1+"' and Genre = '"+genre1+"' and Name = '"+name1+"' and Status = '0'";
     }
 
     if (genre1.size() > 0 && name1.size() > 0 && author1.size()  == 0 && year1.size() > 0 )
     {
 
-        str = "select * from Book where Genre = '"+genre1+"' and Name = '"+name1+"' and Year = '"+year1+"' ";
+        str = "select * from Book where Genre = '"+genre1+"' and Name = '"+name1+"' and Year = '"+year1+"' and Status  = '0' ";
     }
 
     if (genre1.size() > 0 && name1.size() == 0 && author1.size()  > 0 && year1.size() > 0 )
     {
 
-        str = "select * from Book where Genre = '"+genre1+"' and Author = '"+author1+"' and Year = '"+year1+"' ";
+        str = "select * from Book where Genre = '"+genre1+"' and Author = '"+author1+"' and Year = '"+year1+"' and Status  = '0' ";
     }
 
     if (genre1.size() == 0 && name1.size() > 0 && author1.size()  > 0 && year1.size() > 0 )
     {
 
-        str = "select * from Book where Name = '"+name1+"' and Author = '"+author1+"' and Year = '"+year1+"' ";
+        str = "select * from Book where Name = '"+name1+"' and Author = '"+author1+"' and Year = '"+year1+"' and Status  = '0' ";
     }
     if (genre1.size() > 0 && name1.size() > 0 && author1.size()  > 0 && year1.size() > 0 )
     {
 
-        str = "select * from Book where Name = '"+name1+"' and Author = '"+author1+"' and Year = '"+year1+"' and Genre = '"+genre1+"'";
+        str = "select * from Book where Name = '"+name1+"' and Author = '"+author1+"' and Year = '"+year1+"' and Genre = '"+genre1+"' and Status  = '0'";
     }
 
      if(genre1.size() == 0 && name1.size() == 0 && author1.size() == 0 && year1.size() == 0){
          QMessageBox::critical(0,"Search" , "vedite danie");
 
     }
-
 
 
          if(src.exec(str)){
@@ -218,6 +219,9 @@ void Searchbook::on_pushButton_search_1_clicked()
             QSqlQueryModel * srbook = new QSqlQueryModel();
             QSqlQuery * qrybook = new QSqlQuery(srcbd);
 
+
+           // book.prepare("select * from Book where Status  = '0'");
+         //  if(book.exec()){
             qrybook->prepare(str);
             qrybook->exec();
 
@@ -243,7 +247,7 @@ void Searchbook::on_pushButton_search_1_clicked()
                 QSqlQueryModel * modalbk = new QSqlQueryModel();
 
                 QSqlQuery * qry = new QSqlQuery(srcbd);
-                qry->prepare("select Genre ,Name , Author , Year from Book");
+                qry->prepare("select *  from Book where Status = '0' ");
                 qry->exec();
 
                 modalbk->setQuery(*qry);
@@ -254,12 +258,13 @@ void Searchbook::on_pushButton_search_1_clicked()
                 ui->lineEdit_genre1->clear();
                 ui->lineEdit_name1->clear();
                 ui->lineEdit_year1->clear();
-                srcbd.close();
+
 
        }
 }
-
+            srcbd.close();
 }
+
 
 void Searchbook::on_pushButton_take_clicked()
 {
@@ -277,7 +282,7 @@ void Searchbook::on_pushButton_take_clicked()
 
     while(query.next()){
         idd = query.value(4).toString();
-        ui->lineEdit1->setText(idd);
+       // ui->lineEdit1->setText(idd);
     }
 
  regg.close();
@@ -290,7 +295,10 @@ void Searchbook::on_pushButton_take_clicked()
 
     QSqlQuery book11111;
     book11111.prepare("update Book set Status = '"+idd+"' where Name = '"+nametake+"' and Author  = '"+authortake+"'");
-    if(book11111.exec()){
+    if( nametake.size() == 0 &&  authortake.size() == 0){
+      QMessageBox::critical(0 , "Error" , "Please select book");
+  }
+    else if(book11111.exec()){
         QMessageBox::information(0 , "Select" , "Select book is succesfull");
         ui->lineEdit1->clear();
         ui->lineEdit_aut1->clear();
@@ -306,6 +314,7 @@ void Searchbook::on_pushButton_take_clicked()
         ui->tableView_1->setModel(modalbk2);
     }
 
+srcbd.close();
 }
 
 
@@ -314,7 +323,7 @@ void Searchbook::on_pushButton_2_clicked()
      dbregsrc = QSqlDatabase::addDatabase("QSQLITE");
     dbregsrc.setDatabaseName("D:/Kyrs/Kyrs/Reg.db");
 
-  dbregsrc.isOpen();
+  dbregsrc.open();
     puts("saadfgh");
      QString sign = "0";
      QString signf = "1";
@@ -333,3 +342,13 @@ void Searchbook::on_pushButton_2_clicked()
 
 
 
+
+void Searchbook::on_pushButton_3_clicked()
+{
+
+    close();
+    Busybook busy;
+    busy.setModal(true);
+    busy.exec();
+
+}

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Registration</class>
+ <widget class="QDialog" name="Registration">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-color: rgb(124, 255, 218);
+background-color: qlineargradient(spread:reflect, x1:0, y1:0.488636, x2:1, y2:0.483, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(254, 252, 255, 243));
+/*background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0.915254, y2:0.108, stop:0 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qlineargradient(spread:pad, x1:0.0110455, y1:0.443, x2:0.988636, y2:0.449, stop:0.136364 rgba(71, 94, 142, 255), stop:1 rgba(255, 255, 255, 255));*/
+/*background-color: qlineargradient(spread:pad, x1:0.0110455, y1:0.443, x2:0.988636, y2:0.449, stop:0.136364 rgba(111, 72, 72, 255), stop:1 rgba(255, 255, 255, 255));
+*/
+gridline-color: rgb(178, 255, 250);</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_reg">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>180</y>
+     <width>131</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);background :rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Registration</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelinf">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>22</x>
+     <y>31</y>
+     <width>246</width>
+     <height>122</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_name_reg">
+        <property name="font">
+         <font>
+          <family>Segoe Script</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_sur_reg">
+        <property name="font">
+         <font>
+          <family>Segoe Script</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Surname</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_usname_reg">
+        <property name="font">
+         <font>
+          <family>Segoe Script</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_pas_reg">
+        <property name="font">
+         <font>
+          <family>Segoe Script</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+font: 80 12pt &quot;Segoe Script&quot;;
+font: 75 12pt &quot;Segoe Script&quot;;
+color:rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Password</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_name_reg">
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Segoe Script&quot;;
+background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_sur_reg">
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Segoe Script&quot;;
+background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_usname_reg">
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Segoe Script&quot;;
+background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_pas_reg">
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Segoe Script&quot;;
+background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include "mainwindow.h"
+#include "busybook.h"
 namespace Ui {
 class Searchbook;
 }
@@ -28,6 +29,8 @@ private slots:
     void on_pushButton_take_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::Searchbook *ui;
