@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<form action="http://127.0.0.1:5000/api/admins/new" method="POST">
+ 
+  Name:<br>
+  <input type="text" name="name" value="qwert"equired><br>
+  Surname:<br>
+  <input type="text" name="surname" value="Pupkin" required>
+  <br>
+  Birthdate:<br>
+  <input type="text" name="birthdate" value = "1998"required><br>
+  Rate:<br>
+  <input type="text" name="rate" value="6.0" required>
+  <br>
+  Creating year:<br>   
+  <input type="text" name="creating_year" value="2016" required>
+  <br>
+  Followers:<br>
+  <input type="text" name="followers" value="0" required>
+  <br>
+  <input type="submit" value='POST' />
+</form>
+
+<p> <a href="http://127.0.0.1:5000/admins"> Back to main menu</p>
+<p> <a href="http://127.0.0.1:5000/api/admins/new"> New admin</p>
+
+</body>
+</html>

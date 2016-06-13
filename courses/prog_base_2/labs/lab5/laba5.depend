@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1465776658 source:d:\codeblocks\laba5\db_manager.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<sqlite3.h>
+	"db_manager.h"
+
+1465775261 d:\codeblocks\laba5\socket.h
+
+1465775067 source:d:\codeblocks\laba5\list.c
+	<stdlib.h>
+	"list.h"
+
+1465775230 d:\codeblocks\laba5\list.h
+
+1465775951 source:d:\codeblocks\laba5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<windows.h>
+	"http.h"
+	"xml.h"
+	"socket.h"
+	"db_manager.h"
+	<stddef.h>
+	"socket.h"
+
+1465775153 d:\codeblocks\laba5\http.h
+
+1465775206 d:\codeblocks\laba5\xml.h
+	"list.h"
+
+1465775303 d:\codeblocks\laba5\db_manager.h
+	"list.h"
+	"xml.h"
+
+1465775653 source:d:\codeblocks\laba5\socket_win.c
+	<winsock2.h>
+	<windows.h>
+	"socket.h"
+
+1465775310 source:d:\codeblocks\laba5\xml.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<libxml/parser.h>
+	<libxml/tree.h>
+	"list.h"
+	"xml.h"
+
