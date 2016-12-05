@@ -1,0 +1,32 @@
+.leftimage{
+    float: left;
+    height: 400px;
+}
+#type{
+    position: relative;
+    top:100px;
+    width: 55%;
+    height:100px;
+    margin:0;
+   /* background-color:black;*/
+}
+#har{
+    position: relative;
+    left:400px;
+    width: 1000px;
+    
+}
+#footer{
+    position: relative;
+    top: 216px;
+   
+    text-align: right;
+}
+#back{
+    position: relative;
+    top: -350px;
+    right:-1100px;
+    text-align: left;
+    width: 200px;
+
+}

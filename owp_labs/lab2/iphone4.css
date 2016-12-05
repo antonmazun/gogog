@@ -1,0 +1,45 @@
+.leftimage{
+   float: left;
+    height: 400px;
+}
+#type{
+    position: relative;
+    top:0px;
+    width: 55%;
+    height:100px;
+    margin:0;
+   /* background-color:black;*/
+}
+
+div.desc{
+    position: relative;
+    top:160px;
+    left:30px;
+}
+.desc{
+    width: 1200px;
+}
+
+#footer{
+    position: relative;
+    top: 334px;
+   
+    text-align: right;
+}
+#back{
+    position: relative;
+    top: -290px;
+    right:-900px;
+    text-align: left;
+    width: 200px;
+
+}
+ul>li.strong{
+    
+    color: aqua;
+}
+p.price{
+    position: relative;
+    
+    
+}
