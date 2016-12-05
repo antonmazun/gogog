@@ -1,0 +1,91 @@
+[{
+		"name": "Nokia 701",
+		"manufacturer": "Nokia",
+		"price": 450,
+		"rate": 8,
+		"date": "2000-01-01"
+
+	},
+
+	{
+
+		"name": "Nokia X2-05",
+		"manufacturer": "Nokia",
+		"price": 540,
+		"rate": 7,
+		"date": "2005-02-04"
+
+	},
+
+	{
+		"name": "Nokia C2-03",
+		"manufacturer": "Nokia",
+		"price": 745,
+		"rate": 6,
+		"date": "2002-07-08"
+	},
+
+	{
+		"name": "Nokia X7",
+		"manufacturer": "Nokia",
+		"price": 1100,
+		"rate": 10,
+		"date": "2009-10-10"
+
+
+
+	},
+
+
+	{
+		"name": "iPhone 2G",
+		"manufacturer": "Apple",
+		"price": 200,
+		"rate": 5,
+		"date": "2007-02-04"
+
+
+	}, {
+		"name": "iPhone 3G",
+		"manufacturer": "Apple",
+		"price": 300,
+		"rate": 7,
+		"date": "2008-02-04"
+
+
+	},
+
+	{
+		"name": "iPhone 4",
+		"manufacturer": "Apple",
+		"price": 400,
+		"rate": 8,
+		"date": "2010-07-04"
+
+
+	}, {
+		"name": "iPhone 5",
+		"manufacturer": "Apple",
+		"price": 500,
+		"rate": 9,
+		"date": "2012-07-08"
+
+
+	}, {
+		"name": "iPhone 6",
+		"manufacturer": "Apple",
+		"price": 600,
+		"rate": 9,
+		"date": "2014-02-04"
+
+
+	}, {
+		"name": "iPhone 7",
+		"manufacturer": "Apple",
+		"price": 850,
+		"rate": 10,
+		"date": "2016-02-04"
+
+
+	}
+]
