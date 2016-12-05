@@ -1,0 +1,22 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for i in phones %}
+    <h1><a href = "/phones_view/get/{{i.id}}">{{i.name}}</a></h1>
+    <p> Manufacturer:{{i.manufacturer}}</p>
+    <p>Цена $: {{i.price}}</p>
+    <p> Rate :{{i.rate}}</p>
+    <p> Date :{{i.date}}</p>
+    <hr>
+    <hr>
+{% endfor %}
+
+</body>
+</html>

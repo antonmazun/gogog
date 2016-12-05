@@ -1,0 +1,21 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if phone %}
+    <h1> Name:{{phone.name}}</h1>
+    <p> Manufacturer:{{phone.manufacturer}}</p>
+    <p>Цена $: {{phone.price}}</p>
+    <p> Rate :{{phone.rate}}</p>
+    <p> Date :{{phone.date}}</p>
+    <hr>
+{% endif %}
+
+
+</body>
+</html>
