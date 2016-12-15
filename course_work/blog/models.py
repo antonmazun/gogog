@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 #from ckeditor_uploader.fields import RichTextUploadingField
 from mptt.models import MPTTModel , TreeForeignKey
+from django.contrib.auth.models import User as DJangoUser
 
 # Create your models here.
 class Category(MPTTModel):
@@ -11,6 +12,7 @@ class Category(MPTTModel):
     ordering = ('tree_id' , 'level')
     name = models.CharField(max_length=150 , verbose_name = "Category")
     parent = TreeForeignKey('self' , null=True , blank  = True , related_name="children" , db_index = True)
+
     def __unicode__(self):
         return self.name
 
@@ -66,18 +68,27 @@ class Phone(models.Model):
     date = models.DateField()
     likes = models.IntegerField(default=0)
     image = models.ImageField(upload_to= 'image/' ,null = True)
-    category = TreeForeignKey(Category , blank=True , null = True  , related_name='iphone')
+    #category = TreeForeignKey(Category , blank=True , null = True  , related_name='iphone')
     quantity = models.IntegerField(default= 10)
+    zakaz = models.ManyToManyField(DJangoUser, related_name='phones')
+
+
 
 
     def dic(self):
-        return {'title':self.title ,
+        return {'id' : self.id,
+                'title':self.title ,
                 'desc': self.desc ,
                 'price':self.price ,
                 'rate' : self.rate ,
                 'likes': self.likes,
-                'quantity':self.quantity}
+                'quantity':self.quantity,
+                'url' : self.image.url,
+                }
+
+
 
     def __str__(self):
         return (self.title)
+
 

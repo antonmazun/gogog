@@ -10,4 +10,6 @@ urlpatterns = (
     url(r'^$', views.phones_view),
     url(r'^phones_view/get/(\d+)/$' , views.phone_view),
     url(r'^category/$', views.show_category),
+    url(r'^search/', views.search),
+    url(r'^zakaz/get/$' , views.zakaz),
 )

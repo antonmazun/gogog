@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{%block search%}
+
+{% for i in phones %}
+    <h1><a href = "/phones_view/get/{{i.id}}">{{i.title}}</a></h1>
+    <p>{{i.desc}}</p>
+    <p>Цена $: {{i.price}}</p>
+    <p>{{i.rate}}</p>
+    <p>{{i.date}}</p>
+    <div id = "image">
+<img src  = "{{i.image.url}}">
+</div>
+    <hr>
+{% endfor %}
+<ul class = "pagination pull-left " style = "color:black;">
+   <span class="step-links">
+        {% if phones.has_previous %}
+           <button class = "btn btn-info"> <a href="?page={{ phones.previous_page_number}}">previous</a></button>
+        {% endif %}
+
+        <span class="">
+             Page {{ phones.number }} of {{ phones.paginator.num_pages }}
+        </span>
+
+        {% if phones.has_next %}
+           <button class = "btn btn-info"><a href="?page={{ phones.next_page_number }}">next</a></button>
+        {% endif %}
+    </span>
+</ul>
+{% endblock %}
