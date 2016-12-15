@@ -1,0 +1,12 @@
+{%extends "main.html" %}
+{% block login %}
+
+
+<div class = "large-offset-4 large-3 columns">
+    <form action = "/auth/register/" method = "POST">
+        {{form}}
+         <input class  ="button" type = "submit"  value = "Регистрация">
+        </form>
+    </div>
+{%endblock%}
+

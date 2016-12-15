@@ -1,0 +1,35 @@
+
+ 
+{%extends 'main.html'%}
+{% block login %}
+ {%if login_error %}
+  {{login_error}}
+  {%else%}
+
+<form action  = "/auth/login/" method = "post" role = "form">
+
+
+  <div class="form-group">
+    <label for="username">Name</label>
+    <input type="text" class="form-control" id="" placeholder="Введите логин" name = "username">
+  </div>
+  <div class="form-group ">
+    <label for="password">Пароль</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль" name = "password">
+  </div>
+  <button type="submit" class="btn btn-default" value = "vxod">Принять</button>
+
+    
+   
+    </form>
+       <form action="/auth/register/" method="post">
+    <button type="submit" class ="btn btn-default" >Регистрация</button>
+</form>
+{%endif%}
+
+<!--
+   
+<input type="button" value="go" onclick="location.href='index_old.html';" />
+
+-->
+        {%endblock%}
