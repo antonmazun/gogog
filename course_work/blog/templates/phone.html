@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block phone_one %}
+
+<div class = "" id = "phones_container">
+            <div class = "col-md-4 phone_container" >
+               
+                    <img src = "{{phone.image.url}}" alt = "iphone"  style = "height:250px;">
+                    <div class = "caption">
+                        <h3>Назва: {{phone.title}}</h3>
+                        <p style="word-wrap:break-word;">Опис :{{phone.desc}}</p>
+                            <p>Ціна $: {{phone.price}}</p>
+                            <p>Рейтинг:{{phone.rate}}</p>
+                            <p>Дата випуску:{{phone.date}}</p>
+                        
+                        <button class = "btn btn-info pull-right add" value = "{{phone.id}}">Додати в кошик</button>
+                    </div>
+                
+</div>
+
+<div class = "col-md-4 comments">
+
+    <p>Коменты: </p>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% for i in comments %}
+        <p> {{i.creator}}</p>
+        <p>{{ i.comments }}</p>
+
+    {%endfor%}
+<form class="form-post" role="form" method="post">
+<textarea class="form-control" rows="4" placeholder="Write smth" required name="text"></textarea>
+    <button class="btn pull-right" type="submit">Post</button>
+</form>
+</div>
+
+</div>
+
+{%endblock%}
