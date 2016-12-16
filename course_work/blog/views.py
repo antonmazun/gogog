@@ -59,6 +59,29 @@ def zakaz(request):
 
 
 
+
+
+
+
+
+
+
+
+
+def search_par(request):
+    print(request.GET)
+    man_list = request.GET['manuf'].split()
+    print(man_list)
+    phones = Phone.objects.none()
+    for i in man_list:
+        phones = phones | Phone.objects.filter(title__icontains=i)
+    phones = phones.filter(price__gt =request.GET['minPrice'] ,price__lt = request.GET['maxPrice'])
+    print(phones)
+    return HttpResponse(json.dumps([i.dic() for i in phones]), content_type="application/javascript")
+
+
+
+
 def phones_view(request):
 
     if request.is_ajax():
